@@ -1,0 +1,73 @@
+title : Scientific Python QuickStart
+author: Thomas J. Sargent and John Stachurski
+logo: 'qe-logo-large.png'
+
+# Short description about the book
+description: >-
+  A brief introduction to Python programming for scientific applications.
+
+
+only_build_toc_files          : true  # Only build files in _toc
+
+execute:
+  execute_notebooks           : cache
+
+# HTML-specific settings
+html:
+  home_page_in_navbar         : false
+  use_multitoc_numbering      : false  # Restart numbering between parts
+
+# Interact link settings
+notebook_interface            : "notebook"
+
+# Launch button settings
+repository:
+  url                         : https://github.com/executablebooks/quantecon-mini-example
+  path_to_book                : "mini_book"
+
+binder:
+  binderhub_url               : "https://mybinder.org"
+  text                        : "Launch binder"
+
+# LaTeX settings
+bibtex_bibfiles:
+   - _bibliography/references.bib
+
+# sphinx:
+#  config:
+#    bibtex_reference_style: 'author_year'
+
+latex:
+  latex_engine                : "xelatex"
+  latex_documents:
+    targetname: book.tex
+
+## Esto es para Rmarkdown
+#
+# sphinx:
+#  config:
+#    nb_custom_formats:
+#        .Rmd:
+#            - jupytext.reads
+#            - fmt: Rmd
+
+## show_authors: true   # No se como funciona
+
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - fieldlist
+    - html_admonition
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - strikethrough
+    - substitution
+    - tasklist
+  myst_heading_anchors : 3
