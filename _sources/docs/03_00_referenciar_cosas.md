@@ -50,3 +50,19 @@ Podemos editar el nombre que apare en las numref antes del número. Por ejemplo,
 Otro ejemplo: {numref}`sec. %s <sec_Code_Blocks_y_Ecuaciones>` en vez de {numref}`sec_Code_Blocks_y_Ecuaciones`.
 
     {numref}`sec. %s <sec_Code_Blocks_y_Ecuaciones>`
+
+
+## Referencias bibliográficas
+
+Cita: ``` {cite}`guttag2016introduction` ```: {cite}`guttag2016introduction`
+
+
+
+
+
+
+
+
+```{bibliography} ../_bibliography/references.bib
+:style: plain 
+```

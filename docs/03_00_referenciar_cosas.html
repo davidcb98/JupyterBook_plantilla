@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_00_sec_Code_Blocks_y_Ecuaciones.html">1. Code Blocks y Ecuaciones</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="02_00_Roles_and_directives.html">2. Roles and directives</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="02_01_Cuadros.html">2.1. Cuadros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_01_Cuadros.html">2.1. Cuadros (admonitions)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_02_Footnotes.html">2.2. Footnotes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_03_Figuras.html">2.3. Figuras</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_04_Mas_cosas.html">2.4. Más cosas</a></li>
@@ -316,6 +316,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#editar-nombre-en-numref">3.1. Editar nombre en numref:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-bibliograficas">3.2. Referencias bibliográficas</a></li>
 </ul>
             </nav>
         </div>
@@ -328,7 +329,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <blockquote>
-<div><p>Nov 30, 2023 | 70 words | 0 min read</p>
+<div><p>Dec 01, 2023 | 73 words | 0 min read</p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="referenciar-cosas">
 <h1><span class="section-number">3. </span>Referenciar cosas<a class="headerlink" href="#referenciar-cosas" title="Permalink to this heading">#</a></h1>
@@ -364,6 +365,17 @@ document.write(`
 <p>Otro ejemplo: <a class="reference internal" href="01_00_sec_Code_Blocks_y_Ecuaciones.html#sec-code-blocks-y-ecuaciones"><span class="std std-numref">sec. 1</span></a> en vez de <a class="reference internal" href="01_00_sec_Code_Blocks_y_Ecuaciones.html#sec-code-blocks-y-ecuaciones"><span class="std std-numref">Section 1</span></a>.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{numref}`sec. %s &lt;sec_Code_Blocks_y_Ecuaciones&gt;`
 </pre></div>
+</div>
+</section>
+<section id="referencias-bibliograficas">
+<h2><span class="section-number">3.2. </span>Referencias bibliográficas<a class="headerlink" href="#referencias-bibliograficas" title="Permalink to this heading">#</a></h2>
+<p>Cita: <code class="docutils literal notranslate"><span class="pre">{cite}`guttag2016introduction`</span></code>: <span id="id1">[<a class="reference internal" href="#id3" title="John Guttag. Introduction to computation and programming using Python: With application to understanding data. MIT Press, 2016.">1</a>]</span></p>
+<div class="docutils container" id="id2">
+<dl class="citation">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>John Guttag. <em>Introduction to computation and programming using Python: With application to understanding data</em>. MIT Press, 2016.</p>
+</dd>
+</dl>
 </div>
 </section>
 </section>
@@ -423,6 +435,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#editar-nombre-en-numref">3.1. Editar nombre en numref:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-bibliograficas">3.2. Referencias bibliográficas</a></li>
 </ul>
   </nav></div>
 

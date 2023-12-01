@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_00_sec_Code_Blocks_y_Ecuaciones.html">1. Code Blocks y Ecuaciones</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="02_00_Roles_and_directives.html">2. Roles and directives</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="02_01_Cuadros.html">2.1. Cuadros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_01_Cuadros.html">2.1. Cuadros (admonitions)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_02_Footnotes.html">2.2. Footnotes</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.3. Figuras</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_04_Mas_cosas.html">2.4. Más cosas</a></li>
@@ -319,7 +319,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <blockquote>
-<div><p>Nov 30, 2023 | 49 words | 0 min read</p>
+<div><p>Dec 01, 2023 | 33 words | 0 min read</p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="figuras">
 <h1><span class="section-number">2.3. </span>Figuras<a class="headerlink" href="#figuras" title="Permalink to this heading">#</a></h1>
@@ -339,14 +339,18 @@ document.write(`
 <p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">This is a caption in <strong>Markdown</strong></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Referencia a la figura: <code class="xref std std-numref docutils literal notranslate"><span class="pre">Figure</span> <span class="pre">%s</span></code> (no funciona esta referencia)</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Referencia a la figura: {numref}`Figure %s &lt;fig-target-2&gt;`  (no funciona esta referencia)
+</pre></div>
+</div>
 <figure class="myclass align-default" id="id2">
 <a class="bg-primary mb-1 reference internal image-reference" href="../_images/Descomp_ortogonal.png"><img alt="decipcion de la imagen" class="bg-primary mb-1 align-center" src="../_images/Descomp_ortogonal.png" style="width: 200px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2.3 </span><span class="caption-text">This is a caption in <strong>Markdown</strong></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Referencia a la figura: <code class="xref std std-numref docutils literal notranslate"><span class="pre">Figure</span> <span class="pre">%s</span></code> (no funciona esta referencia)</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Referencia a la figura: {numref}`Figure %s &lt;fig-target_3&gt;` (no funciona esta referencia)
+</pre></div>
+</div>
 <p><img alt="" src="https://myst-parser.readthedocs.io/en/latest/_static/logo-wide.svg" /></p>
 </section>
 

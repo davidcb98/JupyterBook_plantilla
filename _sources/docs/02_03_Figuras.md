@@ -42,8 +42,9 @@ Referencia a la figura: {numref}`Fig. %s <fig-target>`
 This is a caption in **Markdown**
 ```
 
-Referencia a la figura: {numref}`Figure %s <fig-target-2>` (no funciona esta referencia)
-
+```text
+Referencia a la figura: {numref}`Figure %s <fig-target-2>`  (no funciona esta referencia)
+```
 
 :::{figure-md} 
     :class: myclass
@@ -57,8 +58,9 @@ Referencia a la figura: {numref}`Figure %s <fig-target-2>` (no funciona esta ref
 This is a caption in **Markdown**
 :::
 
+```text
 Referencia a la figura: {numref}`Figure %s <fig-target_3>` (no funciona esta referencia)
-
+```
 
 
 ![](https://myst-parser.readthedocs.io/en/latest/_static/logo-wide.svg)

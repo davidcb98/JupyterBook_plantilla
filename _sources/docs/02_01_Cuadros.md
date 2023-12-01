@@ -13,7 +13,7 @@ kernelspec:
 
 > {sub-ref}`today` | {sub-ref}`wordcount-words` words | {sub-ref}`wordcount-minutes` min read
 
-# Cuadros
+# Cuadros (admonitions)
 
 ## Cuadros donde se puede cambiar el título
 
@@ -50,6 +50,17 @@ This is an admonition class tip
 This is an admonition class tip
 ```
 
+```text
+Esto es para escribir texto plano. Es decir, no se renderizan 
+los comandos estilo {numref}`Figure %s <fig-target_3>`
+```
+
+> Quote block
+>
+> Y vemos que puede ser de varias líneas
+
+
+
 ## Cuadros rápidos (no se puede cambiar el título)
 
 ```{note}
@@ -79,6 +90,13 @@ Here's my **warning**
 
 ## Cuadros (usando ::: :::)
 
+Para entornos donde no se reconoce la sintaxis 
+    ``` 
+puede usarse la sintaxis
+    :::
+
+
+
 ::::{important} 
 :::{note}
 
@@ -93,3 +111,31 @@ Esto es una nota
 
 This is a **warning**
 :::
+
+## Cuadros con html
+
+A drawback of admonition syntax is that it will not render in interfaces that do not support this syntax (e.g., GitHub). If you’d like to use admonitions that are defined purely with HTML, MyST can parse them via the html_admonitions extension. 
+
+<div class="admonition note" name="html-admonition" style="background: lightgreen; padding: 10px">
+<p class="title">This is the **title**</p>
+This is the *content*
+</div>
+
+During the Sphinx render, both the class and name attributes will be used by Sphinx, but any other attributes like style will be discarded.
+
+There can be no empty lines in the block, otherwise they will be read as two separate blocks. If you want to use multiple paragraphs then they can be enclosed in `<p>`:
+
+<div class="admonition note">
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+</div>
+
+
+<div class="admonition">
+<p>Some **content**</p>
+  <div class="admonition tip">
+  <div class="title">A *title*</div>
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+  </div>
+</div>

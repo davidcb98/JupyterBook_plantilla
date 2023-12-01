@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_00_sec_Code_Blocks_y_Ecuaciones.html">1. Code Blocks y Ecuaciones</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="02_00_Roles_and_directives.html">2. Roles and directives</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="02_01_Cuadros.html">2.1. Cuadros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_01_Cuadros.html">2.1. Cuadros (admonitions)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_02_Footnotes.html">2.2. Footnotes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_03_Figuras.html">2.3. Figuras</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.4. Más cosas</a></li>
@@ -293,7 +293,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -309,6 +311,19 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-and-sidebar">2.4.1. Margin and sidebar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hlist">2.4.2. hlist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grids">2.4.3. Grids</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropdowns">2.4.4. Dropdowns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tab-content">2.4.5. Tab content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table">2.4.6. Table</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -319,15 +334,30 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <blockquote>
-<div><p>Nov 30, 2023 | 53 words | 0 min read</p>
+<div><p>Dec 01, 2023 | 329 words | 2 min read</p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="mas-cosas">
 <h1><span class="section-number">2.4. </span>Más cosas<a class="headerlink" href="#mas-cosas" title="Permalink to this heading">#</a></h1>
-<blockquote>
-<div><p>this is a quote</p>
-</div></blockquote>
-<p>Linea horizontal:</p>
+<p>Presentamos primero la linea horizontal, pues la usaremos (pueden ser tres <code class="docutils literal notranslate"><span class="pre">-</span></code> o más):</p>
 <hr class="docutils" />
+<blockquote>
+<div><p>this is a quote. this is a quote. this is a quote. this is a quote. this is a quote. this is a quote</p>
+<p>this is a quote</p>
+<p>this is a quote</p>
+</div></blockquote>
+<hr class="docutils" />
+<p>Veamos otra forma de hacer cuotas:</p>
+<blockquote class="epigraph">
+<div><p>Here is a cool quotation.</p>
+<p class="attribution">—Jo the Jovyan</p>
+</div></blockquote>
+<section id="margin-and-sidebar">
+<h2><span class="section-number">2.4.1. </span>Margin and sidebar<a class="headerlink" href="#margin-and-sidebar" title="Permalink to this heading">#</a></h2>
+<aside class="sidebar">
+<p class="sidebar-title">My sidebar title</p>
+<p>My sidebar content</p>
+</aside>
+<p>If you use a sidebar within your content, the sidebar will stay in-line with your page’s content. However, it will be placed to the right, allowing your content to wrap around it. This prevents the sidebar from breaking up the flow of your content. This is particularly useful if you’ve got tall-and-long blocks of content or images that you would like to provide context to throughout your content.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Escribimos en el margen !!!</p>
@@ -336,6 +366,9 @@ document.write(`
 <p>Incluso escribimos notas!!!</p>
 </div>
 </aside>
+</section>
+<section id="hlist">
+<h2><span class="section-number">2.4.2. </span>hlist<a class="headerlink" href="#hlist" title="Permalink to this heading">#</a></h2>
 <p>Veamos una hlist:</p>
 <table class="hlist"><tr><td><ul class="simple">
 <li><p>Elemento 1</p></li>
@@ -351,11 +384,195 @@ document.write(`
 <li><p>Elemento 7</p></li>
 </ul>
 </td></tr></table>
+<hr class="docutils" />
 <p>Veamos un rubric:</p>
 <p class="rubric">This is a rubric (título chulo básicamente)</p>
+<hr class="docutils" />
 <p>Veamos un centered:</p>
 <p class="centered">
-<strong>Esto es un centered (negrita y centrado)</strong></p><p>Autor (no se como funciona):</p>
+<strong>Esto es un centered (negrita y centrado)</strong></p><hr class="docutils" />
+<p>Autor (no se como funciona):</p>
+<hr class="docutils" />
+<p>Veamos glosarios:</p>
+<dl class="glossary simple">
+<dt id="term-Term-one">Term one<a class="headerlink" href="#term-Term-one" title="Permalink to this term">#</a></dt><dd><p>An indented explanation of term 1</p>
+</dd>
+<dt id="term-A-second-term">A second term<a class="headerlink" href="#term-A-second-term" title="Permalink to this term">#</a></dt><dd><p>An indented explanation of term2</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>Veamos las sustitution (hay que añadirlas al encabezado de la página)</p>
+<p>Sustitution 1: I’m a <strong>substitution</strong></p>
+<p>Sustitution 2: <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I’m a <strong>substitution</strong></p>
+</div>
+</p>
+<hr class="docutils" />
+<p>You can also define book-level substitution variables with the following configuration:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>parse:
+  myst_substitutions:
+    key: value
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Sustituciones con formato: MyST substitutions use Jinja templates in order to substitute in key / values. This means that you can apply any standard Jinja formatting to your substitutions. For example, you can replace text in your substitutions like so:</p>
+<p>The original key1: I’m a <strong>substitution</strong></p>
+<p>I’m a <strong>substitution</strong></p>
+</section>
+<section id="grids">
+<h2><span class="section-number">2.4.3. </span>Grids<a class="headerlink" href="#grids" title="Permalink to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-4 sd-g-xs-4 sd-g-sm-4 sd-g-md-4 sd-g-lg-4 docutils">
+<div class="sd-col sd-d-flex-column sd-border-1 docutils">
+<p>A</p>
+</div>
+<div class="sd-col sd-d-flex-column sd-border-1 docutils">
+<p>B</p>
+</div>
+<div class="sd-col sd-d-flex-column sd-border-1 docutils">
+<p>C</p>
+</div>
+<div class="sd-col sd-d-flex-column sd-border-1 docutils">
+<p>D</p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column sd-col-3 sd-col-xs-3 sd-col-sm-3 sd-col-md-3 sd-col-lg-3 sd-border-1 docutils">
+<p>A</p>
+<p>A2</p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-9 sd-col-xs-9 sd-col-sm-9 sd-col-md-9 sd-col-lg-9 sd-border-1 docutils">
+<p>B</p>
+<p>B2</p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 sd-border-1 docutils">
+<p>C</p>
+<p>C2</p>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 sd-border-1 docutils">
+<p>D</p>
+<p>D2</p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+One!</div>
+<p class="sd-card-text">Here’s the first card.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Two!</div>
+<p class="sd-card-text">Here’s the second card.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Three!</div>
+<p class="sd-card-text">Here’s the third card.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="dropdowns">
+<h2><span class="section-number">2.4.4. </span>Dropdowns<a class="headerlink" href="#dropdowns" title="Permalink to this heading">#</a></h2>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Here’s my dropdown<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">And here’s my dropdown content</p>
+</div>
+</details><div class="tip dropdown admonition">
+<p class="admonition-title">Click here!</p>
+<p>Here’s what’s inside!</p>
+</div>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
+<p>The note body will be hidden!</p>
+</div>
+</section>
+<section id="tab-content">
+<h2><span class="section-number">2.4.5. </span>Tab content<a class="headerlink" href="#tab-content" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Tab 1 title</label><div class="sd-tab-content docutils">
+<p>My first tab</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Tab 2 title</label><div class="sd-tab-content docutils">
+<p>My second tab with <code class="docutils literal notranslate"><span class="pre">some</span> <span class="pre">code</span></code>!</p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Python</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Java</label><div class="sd-tab-content docutils">
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="table">
+<h2><span class="section-number">2.4.6. </span>Table<a class="headerlink" href="#table" title="Permalink to this heading">#</a></h2>
+<table class="colwidths-auto table" id="my-table-ref">
+<caption><span class="caption-number">Table 2.1 </span><span class="caption-text">My table title</span><a class="headerlink" href="#my-table-ref" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>header 1</p></th>
+<th class="head"><p>header 2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+<p>Here is <a class="reference internal" href="#my-table-ref"><span class="std std-numref">Table 2.1</span></a></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -412,6 +629,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-and-sidebar">2.4.1. Margin and sidebar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hlist">2.4.2. hlist</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grids">2.4.3. Grids</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropdowns">2.4.4. Dropdowns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tab-content">2.4.5. Tab content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table">2.4.6. Table</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
