@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.1. Cuadros (admonitions) &#8212; Scientific Python QuickStart</title>
+    <title>4. Teoremas, pruebas, algoritmos … &#8212; Scientific Python QuickStart</title>
   
   
   
@@ -63,11 +63,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/02_01_Cuadros';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/04_00_Teoremas_pruebas_y_algoritmos';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.2. Footnotes" href="02_02_Footnotes.html" />
-    <link rel="prev" title="2. Roles and directives" href="02_00_Roles_and_directives.html" />
+    <link rel="prev" title="3. Referenciar cosas" href="03_00_referenciar_cosas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,15 +162,15 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_00_sec_Code_Blocks_y_Ecuaciones.html">1. Code Blocks y Ecuaciones</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="02_00_Roles_and_directives.html">2. Roles and directives</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1. Cuadros (admonitions)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="02_00_Roles_and_directives.html">2. Roles and directives</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_01_Cuadros.html">2.1. Cuadros (admonitions)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_02_Footnotes.html">2.2. Footnotes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_03_Figuras.html">2.3. Figuras</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_04_Mas_cosas.html">2.4. Más cosas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="03_00_referenciar_cosas.html">3. Referenciar cosas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_00_Teoremas_pruebas_y_algoritmos.html">4. Teoremas, pruebas, algoritmos …</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Teoremas, pruebas, algoritmos …</a></li>
 </ul>
 
     </div>
@@ -226,7 +225,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/docs/02_01_Cuadros.md" target="_blank"
+      <li><a href="../_sources/docs/04_00_Teoremas_pruebas_y_algoritmos.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +307,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Cuadros (admonitions)</h1>
+    <h1>Teoremas, pruebas, algoritmos …</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -318,10 +317,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuadros-donde-se-puede-cambiar-el-titulo">2.1.1. Cuadros donde se puede cambiar el título</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuadros-rapidos-no-se-puede-cambiar-el-titulo">2.1.2. Cuadros rápidos (no se puede cambiar el título)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuadros-usando">2.1.3. Cuadros (usando ::: :::)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuadros-con-html">2.1.4. Cuadros con html</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">4.1. Theorems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lemmas">4.2. Lemmas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corollaries">4.3. Corollaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proofs">4.4. Proofs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">4.5. Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">4.6. Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axioms">4.7. Axioms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritms">4.8. Algoritms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjectures">4.9. Conjectures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criteria">4.10. Criteria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">4.11. Observations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">4.12. Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propositions">4.13. Propositions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarks">4.14. Remarks</a></li>
 </ul>
             </nav>
         </div>
@@ -334,113 +343,135 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <blockquote>
-<div><p>Dec 04, 2023 | 284 words | 1 min read</p>
+<div><p>Dec 04, 2023 | 167 words | 1 min read</p>
 </div></blockquote>
-<section class="tex2jax_ignore mathjax_ignore" id="cuadros-admonitions">
-<h1><span class="section-number">2.1. </span>Cuadros (admonitions)<a class="headerlink" href="#cuadros-admonitions" title="Permalink to this heading">#</a></h1>
-<section id="cuadros-donde-se-puede-cambiar-el-titulo">
-<h2><span class="section-number">2.1.1. </span>Cuadros donde se puede cambiar el título<a class="headerlink" href="#cuadros-donde-se-puede-cambiar-el-titulo" title="Permalink to this heading">#</a></h2>
-<div class="admonition-this-is-an-admonition admonition">
-<p class="admonition-title">This is an admonition</p>
-<p>This is an admonition</p>
-</div>
-<div class="note admonition">
-<p class="admonition-title">This is an admonition class note</p>
-<p>This is an admonition class note</p>
-</div>
-<div class="important admonition">
-<p class="admonition-title">This is an admonition class important</p>
-<p>This is an admonition class important</p>
-</div>
-<div class="warning admonition">
-<p class="admonition-title">This is an admonition class warning</p>
-<p>This is an admonition class warning</p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">This is an admonition class tip</p>
-<p>This is an admonition class tip</p>
-</div>
-<div class="seealso admonition">
-<p class="admonition-title">This is an admonition class tip</p>
-<p>This is an admonition class tip</p>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Esto es para escribir texto plano. Es decir, no se renderizan 
-los comandos estilo {numref}`Figure %s &lt;fig-target_3&gt;`
-</pre></div>
-</div>
-<blockquote>
-<div><p>Quote block</p>
-<p>Y vemos que puede ser de varias líneas</p>
-</div></blockquote>
+<section class="tex2jax_ignore mathjax_ignore" id="teoremas-pruebas-algoritmos">
+<h1><span class="section-number">4. </span>Teoremas, pruebas, algoritmos …<a class="headerlink" href="#teoremas-pruebas-algoritmos" title="Permalink to this heading">#</a></h1>
+<p>Infrastructure to support items such as proof and algorithm style formatting is provided by the <a class="reference external" href="https://sphinx-proof.readthedocs.io/en/latest/">sphinx-proof</a> extension.</p>
+<p>Para ver todas las directivas: <a class="reference external" href="https://sphinx-proof.readthedocs.io/en/latest/syntax.html#collection-of-directives">https://sphinx-proof.readthedocs.io/en/latest/syntax.html#collection-of-directives</a></p>
+<section id="theorems">
+<h2><span class="section-number">4.1. </span>Theorems<a class="headerlink" href="#theorems" title="Permalink to this heading">#</a></h2>
+<div class="proof theorem admonition" id="my-theorem">
+<p class="admonition-title"><span class="caption-number">Theorem 4.1 </span> (Titulo del teorema (opcional))</p>
+<section class="theorem-content" id="proof-content">
+<p>Esto sería un teorema</p>
 </section>
-<section id="cuadros-rapidos-no-se-puede-cambiar-el-titulo">
-<h2><span class="section-number">2.1.2. </span>Cuadros rápidos (no se puede cambiar el título)<a class="headerlink" href="#cuadros-rapidos-no-se-puede-cambiar-el-titulo" title="Permalink to this heading">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This a note (no se puede cambiar el titulo)</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is a warning (no se puede cambiar el título)</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>This is a tip (no se puede cambiar el título)</p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>This is a seealso (no se puede cambiar el título)</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The next info should be nested</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Here’s my <strong>warning</strong></p>
-</div>
+</div><p>Referenciamos: <a class="reference internal" href="#my-theorem">Theorem 4.1</a></p>
+</section>
+<section id="lemmas">
+<h2><span class="section-number">4.2. </span>Lemmas<a class="headerlink" href="#lemmas" title="Permalink to this heading">#</a></h2>
+<div class="proof lemma admonition" id="my-lemma">
+<p class="admonition-title"><span class="caption-number">Lemma 4.1 </span> (Titulo del lemma (opcional))</p>
+<section class="lemma-content" id="proof-content">
+<p>Esto sería un lemma</p>
+</section>
+</div><p>Referenciamos: <a class="reference internal" href="#my-lemma">Lemma 4.1</a></p>
+</section>
+<section id="corollaries">
+<h2><span class="section-number">4.3. </span>Corollaries<a class="headerlink" href="#corollaries" title="Permalink to this heading">#</a></h2>
+<div class="proof corollary admonition" id="my-corollary">
+<p class="admonition-title"><span class="caption-number">Corollary 4.1 </span> (Titulo del corollary (opcional))</p>
+<section class="corollary-content" id="proof-content">
+<p>Esto sería un corollary</p>
+</section>
+</div><p>Referenciamos: <a class="reference internal" href="#my-corollary">Corollary 4.1</a></p>
+</section>
+<section id="proofs">
+<h2><span class="section-number">4.4. </span>Proofs<a class="headerlink" href="#proofs" title="Permalink to this heading">#</a></h2>
+<div class="proof admonition" id="proof">
+<p>Proof.
+Esto sería un proof. No se puede referenciar</p>
 </div>
 </section>
-<section id="cuadros-usando">
-<h2><span class="section-number">2.1.3. </span>Cuadros (usando ::: :::)<a class="headerlink" href="#cuadros-usando" title="Permalink to this heading">#</a></h2>
-<p>Para entornos donde no se reconoce la sintaxis
-```
-puede usarse la sintaxis
-:::</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Esto es una nota</p>
-</div>
-</div>
-<div class="warning admonition">
-<p class="admonition-title">Cuadro de Warning</p>
-<p>This is a <strong>warning</strong></p>
-</div>
+<section id="definitions">
+<h2><span class="section-number">4.5. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this heading">#</a></h2>
+<div class="proof definition admonition" id="my-definition">
+<p class="admonition-title"><span class="caption-number">Definition 4.1 </span> (Titulo del definition (opcional))</p>
+<section class="definition-content" id="proof-content">
+<p>Esto sería un definition</p>
 </section>
-<section id="cuadros-con-html">
-<h2><span class="section-number">2.1.4. </span>Cuadros con html<a class="headerlink" href="#cuadros-con-html" title="Permalink to this heading">#</a></h2>
-<p>A drawback of admonition syntax is that it will not render in interfaces that do not support this syntax (e.g., GitHub). If you’d like to use admonitions that are defined purely with HTML, MyST can parse them via the html_admonitions extension.</p>
-<div class="admonition note" id="html-admonition">
-<p class="admonition-title">This is the <strong>title</strong></p>
-<p>This is the <em>content</em></p>
-</div>
-<p>During the Sphinx render, both the class and name attributes will be used by Sphinx, but any other attributes like style will be discarded.</p>
-<p>There can be no empty lines in the block, otherwise they will be read as two separate blocks. If you want to use multiple paragraphs then they can be enclosed in <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code>:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Paragraph 1</p>
-<p>Paragraph 2</p>
-</div>
-<div class="admonition">
-<p class="admonition-title">Note</p>
-<p>Some <strong>content</strong></p>
-<div class="admonition tip">
-<p class="admonition-title">A <em>title</em></p>
-<p>Paragraph 1</p>
-<p>Paragraph 2</p>
-</div>
-</div>
+</div><p>Referenciamos: <a class="reference internal" href="#my-definition">Definition 4.1</a></p>
+</section>
+<section id="examples">
+<h2><span class="section-number">4.6. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<div class="proof example admonition" id="my-example">
+<p class="admonition-title"><span class="caption-number">Example 4.1 </span> (Titulo del example (opcional))</p>
+<section class="example-content" id="proof-content">
+<p>Esto sería un example</p>
+</section>
+</div><p>Referenciamos: <a class="reference internal" href="#my-example">Example 4.1</a></p>
+</section>
+<section id="axioms">
+<h2><span class="section-number">4.7. </span>Axioms<a class="headerlink" href="#axioms" title="Permalink to this heading">#</a></h2>
+<div class="proof axiom admonition" id="my-axiom">
+<p class="admonition-title"><span class="caption-number">Axiom 4.1 </span> (Titulo del axiom (opcional))</p>
+<section class="axiom-content" id="proof-content">
+<p>Esto sería un axiom</p>
+</section>
+</div><p>Referenciamos: <a class="reference internal" href="#my-axiom">Axiom 4.1</a></p>
+</section>
+<section id="algoritms">
+<h2><span class="section-number">4.8. </span>Algoritms<a class="headerlink" href="#algoritms" title="Permalink to this heading">#</a></h2>
+<div class="proof algorithm admonition" id="my-algorithm">
+<p class="admonition-title"><span class="caption-number">Algorithm 4.1 </span> (Titulo del algoritm (opcional))</p>
+<section class="algorithm-content" id="proof-content">
+<p>Esto sería un algorithm</p>
+</section>
+</div><p>Referenciamos: <a class="reference internal" href="#my-algorithm">Algorithm 4.1</a></p>
+</section>
+<section id="conjectures">
+<h2><span class="section-number">4.9. </span>Conjectures<a class="headerlink" href="#conjectures" title="Permalink to this heading">#</a></h2>
+<div class="proof conjecture admonition" id="my-conjecture">
+<p class="admonition-title"><span class="caption-number">Conjecture 4.1 </span> (Titulo del conjetures (opcional))</p>
+<section class="conjecture-content" id="proof-content">
+<p>Esto sería un conjetures</p>
+</section>
+</div><p>Referenciamos: <a class="reference internal" href="#my-conjecture">Conjecture 4.1</a></p>
+</section>
+<section id="criteria">
+<h2><span class="section-number">4.10. </span>Criteria<a class="headerlink" href="#criteria" title="Permalink to this heading">#</a></h2>
+<div class="proof criterion admonition" id="my-criteria">
+<p class="admonition-title"><span class="caption-number">Criterion 4.1 </span> (Titulo del criteria (opcional))</p>
+<section class="criterion-content" id="proof-content">
+<p>Esto sería un criteria</p>
+</section>
+</div><p>Referenciamos: <a class="reference internal" href="#my-criteria">Criterion 4.1</a></p>
+</section>
+<section id="observations">
+<h2><span class="section-number">4.11. </span>Observations<a class="headerlink" href="#observations" title="Permalink to this heading">#</a></h2>
+<div class="proof observation admonition" id="my-observation">
+<p class="admonition-title"><span class="caption-number">Observation 4.1 </span> (Titulo del observation (opcional))</p>
+<section class="observation-content" id="proof-content">
+<p>Esto sería un observation</p>
+</section>
+</div><p>Referenciamos: <a class="reference internal" href="#my-observation">Observation 4.1</a></p>
+</section>
+<section id="properties">
+<h2><span class="section-number">4.12. </span>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h2>
+<div class="proof property admonition" id="my-property">
+<p class="admonition-title"><span class="caption-number">Property 4.1 </span> (Titulo del property (opcional))</p>
+<section class="property-content" id="proof-content">
+<p>Esto sería un property</p>
+</section>
+</div><p>Referenciamos: <a class="reference internal" href="#my-property">Property 4.1</a></p>
+</section>
+<section id="propositions">
+<h2><span class="section-number">4.13. </span>Propositions<a class="headerlink" href="#propositions" title="Permalink to this heading">#</a></h2>
+<div class="proof proposition admonition" id="my-proposition">
+<p class="admonition-title"><span class="caption-number">Proposition 4.1 </span> (Titulo del proposition (opcional))</p>
+<section class="proposition-content" id="proof-content">
+<p>Esto sería un proposition</p>
+</section>
+</div><p>Referenciamos: <a class="reference internal" href="#my-proposition">Proposition 4.1</a></p>
+</section>
+<section id="remarks">
+<h2><span class="section-number">4.14. </span>Remarks<a class="headerlink" href="#remarks" title="Permalink to this heading">#</a></h2>
+<div class="proof remark admonition" id="my-remark">
+<p class="admonition-title"><span class="caption-number">Remark 4.1 </span> (Titulo del remark (opcional))</p>
+<section class="remark-content" id="proof-content">
+<p>Esto sería un remarks</p>
+</section>
+</div><p>Referenciamos: <a class="reference internal" href="#my-remark">Remark 4.1</a></p>
 </section>
 </section>
 
@@ -475,22 +506,13 @@ puede usarse la sintaxis
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="02_00_Roles_and_directives.html"
+       href="03_00_referenciar_cosas.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Roles and directives</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Referenciar cosas</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="02_02_Footnotes.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.2. </span>Footnotes</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -507,10 +529,20 @@ puede usarse la sintaxis
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuadros-donde-se-puede-cambiar-el-titulo">2.1.1. Cuadros donde se puede cambiar el título</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuadros-rapidos-no-se-puede-cambiar-el-titulo">2.1.2. Cuadros rápidos (no se puede cambiar el título)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuadros-usando">2.1.3. Cuadros (usando ::: :::)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuadros-con-html">2.1.4. Cuadros con html</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">4.1. Theorems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lemmas">4.2. Lemmas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corollaries">4.3. Corollaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proofs">4.4. Proofs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">4.5. Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">4.6. Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axioms">4.7. Axioms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritms">4.8. Algoritms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjectures">4.9. Conjectures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criteria">4.10. Criteria</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">4.11. Observations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties">4.12. Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propositions">4.13. Propositions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarks">4.14. Remarks</a></li>
 </ul>
   </nav></div>
 

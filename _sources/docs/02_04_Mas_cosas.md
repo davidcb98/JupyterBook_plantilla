@@ -75,26 +75,26 @@ Veamos una hlist:
 * Elemento 7
 ```
 
---------------------------------------------------------------------------------
+## rubric
 
 Veamos un rubric:
 ```{rubric} This is a rubric (título chulo básicamente)
 ```
 
---------------------------------------------------------------------------------
+## Centered
 
 Veamos un centered:
 ```{centered} Esto es un centered (negrita y centrado)
 ```
 
---------------------------------------------------------------------------------
+## Sectionauthor
 
 Autor (no se como funciona):
 
 ```{sectionauthor} David Castaño Bandín <david.castano@uma.es>
 ```
 
---------------------------------------------------------------------------------
+## Glossary
 
 Veamos glosarios:
 ```{glossary}
@@ -105,7 +105,7 @@ A second term
   An indented explanation of term2
 ```
 
---------------------------------------------------------------------------------
+## Sustitutions
 
 Veamos las sustitution (hay que añadirlas al encabezado de la página)
 

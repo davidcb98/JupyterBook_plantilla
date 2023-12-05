@@ -30,9 +30,8 @@ Referencia a la figura: {numref}`Fig. %s <fig-target>`
 
 
 
-```{figure-md} 
+```{figure-md} fig-target-2
 :class: myclass
-:name: fig-target-2
 <img src="../_Figuras/Descomp_ortogonal.png" 
     alt="decipcion de la imagen" 
     class="bg-primary mb-1" 
@@ -42,25 +41,9 @@ Referencia a la figura: {numref}`Fig. %s <fig-target>`
 This is a caption in **Markdown**
 ```
 
-```text
-Referencia a la figura: {numref}`Figure %s <fig-target-2>`  (no funciona esta referencia)
-```
 
-:::{figure-md} 
-    :class: myclass
-    :name: fig-target_3
-<img src="../_Figuras/Descomp_ortogonal.png" 
-    alt="decipcion de la imagen" 
-    class="bg-primary mb-1" 
-    width="200px"
-    align="center">
+Referencia a la figura: {numref}`Fig. %s <fig-target-2>` 
 
-This is a caption in **Markdown**
-:::
-
-```text
-Referencia a la figura: {numref}`Figure %s <fig-target_3>` (no funciona esta referencia)
-```
 
 
 ![](https://myst-parser.readthedocs.io/en/latest/_static/logo-wide.svg)

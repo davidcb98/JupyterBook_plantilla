@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -170,6 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="03_00_referenciar_cosas.html">3. Referenciar cosas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_00_Teoremas_pruebas_y_algoritmos.html">4. Teoremas, pruebas, algoritmos …</a></li>
 </ul>
 
     </div>
@@ -318,10 +320,15 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-and-sidebar">2.4.1. Margin and sidebar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hlist">2.4.2. hlist</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grids">2.4.3. Grids</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropdowns">2.4.4. Dropdowns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tab-content">2.4.5. Tab content</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table">2.4.6. Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rubric">2.4.3. rubric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centered">2.4.4. Centered</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sectionauthor">2.4.5. Sectionauthor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">2.4.6. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sustitutions">2.4.7. Sustitutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grids">2.4.8. Grids</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropdowns">2.4.9. Dropdowns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tab-content">2.4.10. Tab content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table">2.4.11. Table</a></li>
 </ul>
             </nav>
         </div>
@@ -334,7 +341,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <blockquote>
-<div><p>Dec 01, 2023 | 329 words | 2 min read</p>
+<div><p>Dec 04, 2023 | 334 words | 2 min read</p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="mas-cosas">
 <h1><span class="section-number">2.4. </span>Más cosas<a class="headerlink" href="#mas-cosas" title="Permalink to this heading">#</a></h1>
@@ -384,15 +391,23 @@ document.write(`
 <li><p>Elemento 7</p></li>
 </ul>
 </td></tr></table>
-<hr class="docutils" />
+</section>
+<section id="rubric">
+<h2><span class="section-number">2.4.3. </span>rubric<a class="headerlink" href="#rubric" title="Permalink to this heading">#</a></h2>
 <p>Veamos un rubric:</p>
 <p class="rubric">This is a rubric (título chulo básicamente)</p>
-<hr class="docutils" />
+</section>
+<section id="centered">
+<h2><span class="section-number">2.4.4. </span>Centered<a class="headerlink" href="#centered" title="Permalink to this heading">#</a></h2>
 <p>Veamos un centered:</p>
 <p class="centered">
-<strong>Esto es un centered (negrita y centrado)</strong></p><hr class="docutils" />
+<strong>Esto es un centered (negrita y centrado)</strong></p></section>
+<section id="sectionauthor">
+<h2><span class="section-number">2.4.5. </span>Sectionauthor<a class="headerlink" href="#sectionauthor" title="Permalink to this heading">#</a></h2>
 <p>Autor (no se como funciona):</p>
-<hr class="docutils" />
+</section>
+<section id="glossary">
+<h2><span class="section-number">2.4.6. </span>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h2>
 <p>Veamos glosarios:</p>
 <dl class="glossary simple">
 <dt id="term-Term-one">Term one<a class="headerlink" href="#term-Term-one" title="Permalink to this term">#</a></dt><dd><p>An indented explanation of term 1</p>
@@ -400,7 +415,9 @@ document.write(`
 <dt id="term-A-second-term">A second term<a class="headerlink" href="#term-A-second-term" title="Permalink to this term">#</a></dt><dd><p>An indented explanation of term2</p>
 </dd>
 </dl>
-<hr class="docutils" />
+</section>
+<section id="sustitutions">
+<h2><span class="section-number">2.4.7. </span>Sustitutions<a class="headerlink" href="#sustitutions" title="Permalink to this heading">#</a></h2>
 <p>Veamos las sustitution (hay que añadirlas al encabezado de la página)</p>
 <p>Sustitution 1: I’m a <strong>substitution</strong></p>
 <p>Sustitution 2: <div class="admonition note">
@@ -421,7 +438,7 @@ document.write(`
 <p>I’m a <strong>substitution</strong></p>
 </section>
 <section id="grids">
-<h2><span class="section-number">2.4.3. </span>Grids<a class="headerlink" href="#grids" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.4.8. </span>Grids<a class="headerlink" href="#grids" title="Permalink to this heading">#</a></h2>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-g-4 sd-g-xs-4 sd-g-sm-4 sd-g-md-4 sd-g-lg-4 docutils">
 <div class="sd-col sd-d-flex-column sd-border-1 docutils">
@@ -493,7 +510,7 @@ Three!</div>
 </div>
 </section>
 <section id="dropdowns">
-<h2><span class="section-number">2.4.4. </span>Dropdowns<a class="headerlink" href="#dropdowns" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.4.9. </span>Dropdowns<a class="headerlink" href="#dropdowns" title="Permalink to this heading">#</a></h2>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Here’s my dropdown<div class="sd-summary-down docutils">
@@ -513,7 +530,7 @@ Here’s my dropdown<div class="sd-summary-down docutils">
 </div>
 </section>
 <section id="tab-content">
-<h2><span class="section-number">2.4.5. </span>Tab content<a class="headerlink" href="#tab-content" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.4.10. </span>Tab content<a class="headerlink" href="#tab-content" title="Permalink to this heading">#</a></h2>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
@@ -557,7 +574,7 @@ Java</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="table">
-<h2><span class="section-number">2.4.6. </span>Table<a class="headerlink" href="#table" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.4.11. </span>Table<a class="headerlink" href="#table" title="Permalink to this heading">#</a></h2>
 <table class="colwidths-auto table" id="my-table-ref">
 <caption><span class="caption-number">Table 2.1 </span><span class="caption-text">My table title</span><a class="headerlink" href="#my-table-ref" title="Permalink to this table">#</a></caption>
 <thead>
@@ -640,10 +657,15 @@ Java</label><div class="sd-tab-content docutils">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-and-sidebar">2.4.1. Margin and sidebar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hlist">2.4.2. hlist</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grids">2.4.3. Grids</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropdowns">2.4.4. Dropdowns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tab-content">2.4.5. Tab content</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table">2.4.6. Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rubric">2.4.3. rubric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centered">2.4.4. Centered</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sectionauthor">2.4.5. Sectionauthor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glossary">2.4.6. Glossary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sustitutions">2.4.7. Sustitutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grids">2.4.8. Grids</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropdowns">2.4.9. Dropdowns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tab-content">2.4.10. Tab content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table">2.4.11. Table</a></li>
 </ul>
   </nav></div>
 
