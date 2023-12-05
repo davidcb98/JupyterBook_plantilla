@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -165,13 +166,14 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Code Blocks y Ecuaciones</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="02_00_Roles_and_directives.html">2. Roles and directives</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="02_01_Cuadros.html">2.1. Cuadros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_01_Cuadros.html">2.1. Cuadros (admonitions)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_02_Footnotes.html">2.2. Footnotes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_03_Figuras.html">2.3. Figuras</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_04_Mas_cosas.html">2.4. Más cosas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="03_00_referenciar_cosas.html">3. Referenciar cosas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_00_Teoremas_pruebas_y_algoritmos.html">4. Teoremas, pruebas, algoritmos …</a></li>
 </ul>
 
     </div>
@@ -318,8 +320,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">1.1. Code blocks and outputs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones">1.2. Ecuaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">1.1. Code blocks and outputs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-no-ejecutables-pero-numeradas-y-con-formato">1.1.1. Celdas no ejecutables pero numeradas y con formato</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-con-salida-de-error">1.1.2. Celdas con salida de error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-desplegables">1.1.3. Celdas desplegables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-con-scroll">1.1.4. Celdas con scroll</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colores-en-los-print">1.1.5. Colores en los print</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-para-insertar-variables-en-el-texto">1.2. glue para insertar variables en el texto</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gluing-variables-en-el-notebook">1.2.1. “Gluing” variables en el notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gluing-numeros-plots-math-y-tablas">1.2.2. “Gluing” numeros, plots. math y tablas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pasting-las-variables">1.2.3. “Pasting” las variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-any-sin-formato">1.2.3.1. glue:any (sin formato)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-text">1.2.3.2. glue:text</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-figure">1.2.3.3. glue:figure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-de-las-ejecuciones">1.3. Estadisticas de las ejecuciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones">1.4. Ecuaciones</a></li>
 </ul>
             </nav>
         </div>
@@ -332,14 +353,16 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <blockquote>
-<div><p>Nov 30, 2023 | 123 words | 1 min read</p>
+<div><p>Dec 04, 2023 | 272 words | 1 min read</p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="code-blocks-y-ecuaciones">
 <span id="sec-code-blocks-y-ecuaciones"></span><h1><span class="section-number">1. </span>Code Blocks y Ecuaciones<a class="headerlink" href="#code-blocks-y-ecuaciones" title="Permalink to this heading">#</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#code-blocks-and-outputs" id="id1">Code blocks and outputs</a></p></li>
-<li><p><a class="reference internal" href="#ecuaciones" id="id2">Ecuaciones</a></p></li>
+<li><p><a class="reference internal" href="#glue-para-insertar-variables-en-el-texto" id="id2">glue para insertar variables en el texto</a></p></li>
+<li><p><a class="reference internal" href="#estadisticas-de-las-ejecuciones" id="id3">Estadisticas de las ejecuciones</a></p></li>
+<li><p><a class="reference internal" href="#ecuaciones" id="id4">Ecuaciones</a></p></li>
 </ul>
 </div>
 <p>En realidad no es necesario poner este indice local. Ya hay el indice de la izquierda y este te pone en azul los titulos de las secciones.</p>
@@ -358,7 +381,7 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x7f33dc247dc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;contextlib.ExitStack at 0x7fcc5508ffa0&gt;
 </pre></div>
 </div>
 </div>
@@ -382,30 +405,643 @@ For example, here’s some sample Matplotlib code:</p>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">lines</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">custom_lines</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Cold&#39;</span><span class="p">,</span> <span class="s1">&#39;Medium&#39;</span><span class="p">,</span> <span class="s1">&#39;Hot&#39;</span><span class="p">]);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">custom_lines</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Cold&#39;</span><span class="p">,</span> <span class="s1">&#39;Medium&#39;</span><span class="p">,</span> <span class="s1">&#39;Hot&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fcb8a243940&gt;
+</pre></div>
+</div>
 <img alt="../_images/165f042da09af3f7a5e742dd4ae058315b519fb9d19a8c2ebcea9dfedcc5d077.png" src="../_images/165f042da09af3f7a5e742dd4ae058315b519fb9d19a8c2ebcea9dfedcc5d077.png" />
 </div>
 </div>
-<p>There is a lot more that you can do with outputs (such as including interactive outputs)
-with your book. For more information about this, see <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a></p>
+<section id="celdas-no-ejecutables-pero-numeradas-y-con-formato">
+<h3><span class="section-number">1.1.1. </span>Celdas no ejecutables pero numeradas y con formato<a class="headerlink" href="#celdas-no-ejecutables-pero-numeradas-y-con-formato" title="Permalink to this heading">#</a></h3>
 <div class="literal-block-wrapper docutils container" id="label-codeblock">
 <div class="code-block-caption"><span class="caption-number">Listing 1.1 </span><span class="caption-text">This is my
 multi-line caption. It is <em>pretty nifty</em> ;-)</span><a class="headerlink" href="#label-codeblock" title="Permalink to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">10</span>        <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-</span><span class="linenos">11</span>        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my 1st line&#39;</span><span class="p">)</span>
-<span class="hll"><span class="linenos">12</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;my </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">nd line&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">10</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span class="linenos">11</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;my 1st line&#39;</span><span class="p">)</span>
+<span class="hll"><span class="linenos">12</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;my </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">nd line&#39;</span><span class="p">)</span>
 </span></pre></div>
 </div>
 </div>
 </section>
+<section id="celdas-con-salida-de-error">
+<h3><span class="section-number">1.1.2. </span>Celdas con salida de error<a class="headerlink" href="#celdas-con-salida-de-error" title="Permalink to this heading">#</a></h3>
+<p>Prueba de celda que da error</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">val_a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">val_a</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;val_a&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="celdas-desplegables">
+<h3><span class="section-number">1.1.3. </span>Celdas desplegables<a class="headerlink" href="#celdas-desplegables" title="Permalink to this heading">#</a></h3>
+<p>Veamos una celda desplegable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;BCDE&#39;</span><span class="p">))],</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="k">def</span> <span class="nf">color_negative_red</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Takes a scalar and returns a string with</span>
+<span class="sd">    the css property `&#39;color: red&#39;` for negative</span>
+<span class="sd">    strings, black otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span> <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;black&#39;</span>
+    <span class="k">return</span> <span class="s1">&#39;color: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">color</span>
+
+<span class="k">def</span> <span class="nf">highlight_max</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    highlight the maximum in a Series yellow.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">is_max</span> <span class="o">=</span> <span class="n">s</span> <span class="o">==</span> <span class="n">s</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;background-color: yellow&#39;</span> <span class="k">if</span> <span class="n">v</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">is_max</span><span class="p">]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span>\
+    <span class="n">applymap</span><span class="p">(</span><span class="n">color_negative_red</span><span class="p">)</span><span class="o">.</span>\
+    <span class="n">apply</span><span class="p">(</span><span class="n">highlight_max</span><span class="p">)</span><span class="o">.</span>\
+    <span class="n">set_table_attributes</span><span class="p">(</span><span class="s1">&#39;style=&quot;font-size: 10px&quot;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_886f9_row0_col0, #T_886f9_row0_col1, #T_886f9_row0_col2, #T_886f9_row1_col0, #T_886f9_row1_col3, #T_886f9_row1_col4, #T_886f9_row2_col0, #T_886f9_row2_col2, #T_886f9_row2_col3, #T_886f9_row3_col0, #T_886f9_row3_col1, #T_886f9_row3_col2, #T_886f9_row3_col3, #T_886f9_row3_col4, #T_886f9_row4_col0, #T_886f9_row4_col1, #T_886f9_row4_col2, #T_886f9_row4_col3, #T_886f9_row4_col4, #T_886f9_row5_col0, #T_886f9_row5_col2, #T_886f9_row5_col3, #T_886f9_row6_col0, #T_886f9_row6_col1, #T_886f9_row6_col4, #T_886f9_row7_col0, #T_886f9_row7_col1, #T_886f9_row7_col2, #T_886f9_row7_col4, #T_886f9_row8_col0, #T_886f9_row9_col2, #T_886f9_row9_col4 {
+  color: black;
+}
+#T_886f9_row0_col3, #T_886f9_row0_col4, #T_886f9_row1_col1, #T_886f9_row1_col2, #T_886f9_row2_col1, #T_886f9_row5_col1, #T_886f9_row5_col4, #T_886f9_row6_col3, #T_886f9_row7_col3, #T_886f9_row8_col2, #T_886f9_row8_col4, #T_886f9_row9_col1, #T_886f9_row9_col3 {
+  color: red;
+}
+#T_886f9_row2_col4, #T_886f9_row6_col2, #T_886f9_row8_col1, #T_886f9_row8_col3, #T_886f9_row9_col0 {
+  color: black;
+  background-color: yellow;
+}
+</style>
+<table id="T_886f9" style="font-size: 10px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_886f9_level0_col0" class="col_heading level0 col0" >A</th>
+      <th id="T_886f9_level0_col1" class="col_heading level0 col1" >B</th>
+      <th id="T_886f9_level0_col2" class="col_heading level0 col2" >C</th>
+      <th id="T_886f9_level0_col3" class="col_heading level0 col3" >D</th>
+      <th id="T_886f9_level0_col4" class="col_heading level0 col4" >E</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_886f9_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_886f9_row0_col0" class="data row0 col0" >1.000000</td>
+      <td id="T_886f9_row0_col1" class="data row0 col1" >1.329212</td>
+      <td id="T_886f9_row0_col2" class="data row0 col2" >nan</td>
+      <td id="T_886f9_row0_col3" class="data row0 col3" >-0.316280</td>
+      <td id="T_886f9_row0_col4" class="data row0 col4" >-0.990810</td>
+    </tr>
+    <tr>
+      <th id="T_886f9_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_886f9_row1_col0" class="data row1 col0" >2.000000</td>
+      <td id="T_886f9_row1_col1" class="data row1 col1" >-1.070816</td>
+      <td id="T_886f9_row1_col2" class="data row1 col2" >-1.438713</td>
+      <td id="T_886f9_row1_col3" class="data row1 col3" >0.564417</td>
+      <td id="T_886f9_row1_col4" class="data row1 col4" >0.295722</td>
+    </tr>
+    <tr>
+      <th id="T_886f9_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_886f9_row2_col0" class="data row2 col0" >3.000000</td>
+      <td id="T_886f9_row2_col1" class="data row2 col1" >-1.626404</td>
+      <td id="T_886f9_row2_col2" class="data row2 col2" >0.219565</td>
+      <td id="T_886f9_row2_col3" class="data row2 col3" >0.678805</td>
+      <td id="T_886f9_row2_col4" class="data row2 col4" >1.889273</td>
+    </tr>
+    <tr>
+      <th id="T_886f9_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_886f9_row3_col0" class="data row3 col0" >4.000000</td>
+      <td id="T_886f9_row3_col1" class="data row3 col1" >0.961538</td>
+      <td id="T_886f9_row3_col2" class="data row3 col2" >0.104011</td>
+      <td id="T_886f9_row3_col3" class="data row3 col3" >nan</td>
+      <td id="T_886f9_row3_col4" class="data row3 col4" >0.850229</td>
+    </tr>
+    <tr>
+      <th id="T_886f9_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_886f9_row4_col0" class="data row4 col0" >5.000000</td>
+      <td id="T_886f9_row4_col1" class="data row4 col1" >1.453425</td>
+      <td id="T_886f9_row4_col2" class="data row4 col2" >1.057737</td>
+      <td id="T_886f9_row4_col3" class="data row4 col3" >0.165562</td>
+      <td id="T_886f9_row4_col4" class="data row4 col4" >0.515018</td>
+    </tr>
+    <tr>
+      <th id="T_886f9_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_886f9_row5_col0" class="data row5 col0" >6.000000</td>
+      <td id="T_886f9_row5_col1" class="data row5 col1" >-1.336936</td>
+      <td id="T_886f9_row5_col2" class="data row5 col2" >0.562861</td>
+      <td id="T_886f9_row5_col3" class="data row5 col3" >1.392855</td>
+      <td id="T_886f9_row5_col4" class="data row5 col4" >-0.063328</td>
+    </tr>
+    <tr>
+      <th id="T_886f9_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_886f9_row6_col0" class="data row6 col0" >7.000000</td>
+      <td id="T_886f9_row6_col1" class="data row6 col1" >0.121668</td>
+      <td id="T_886f9_row6_col2" class="data row6 col2" >1.207603</td>
+      <td id="T_886f9_row6_col3" class="data row6 col3" >-0.002040</td>
+      <td id="T_886f9_row6_col4" class="data row6 col4" >1.627796</td>
+    </tr>
+    <tr>
+      <th id="T_886f9_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_886f9_row7_col0" class="data row7 col0" >8.000000</td>
+      <td id="T_886f9_row7_col1" class="data row7 col1" >0.354493</td>
+      <td id="T_886f9_row7_col2" class="data row7 col2" >1.037528</td>
+      <td id="T_886f9_row7_col3" class="data row7 col3" >-0.385684</td>
+      <td id="T_886f9_row7_col4" class="data row7 col4" >0.519818</td>
+    </tr>
+    <tr>
+      <th id="T_886f9_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_886f9_row8_col0" class="data row8 col0" >9.000000</td>
+      <td id="T_886f9_row8_col1" class="data row8 col1" >1.686583</td>
+      <td id="T_886f9_row8_col2" class="data row8 col2" >-1.325963</td>
+      <td id="T_886f9_row8_col3" class="data row8 col3" >1.428984</td>
+      <td id="T_886f9_row8_col4" class="data row8 col4" >-2.089354</td>
+    </tr>
+    <tr>
+      <th id="T_886f9_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_886f9_row9_col0" class="data row9 col0" >10.000000</td>
+      <td id="T_886f9_row9_col1" class="data row9 col1" >-0.129820</td>
+      <td id="T_886f9_row9_col2" class="data row9 col2" >0.631523</td>
+      <td id="T_886f9_row9_col3" class="data row9 col3" >-0.586538</td>
+      <td id="T_886f9_row9_col4" class="data row9 col4" >0.290720</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="celdas-con-scroll">
+<h3><span class="section-number">1.1.4. </span>Celdas con scroll<a class="headerlink" href="#celdas-con-scroll" title="Permalink to this heading">#</a></h3>
+<p>Veamos una celca con scroll en la salida</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;this is output line </span><span class="si">{</span><span class="n">ii</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>this is output line 0
+this is output line 1
+this is output line 2
+this is output line 3
+this is output line 4
+this is output line 5
+this is output line 6
+this is output line 7
+this is output line 8
+this is output line 9
+this is output line 10
+this is output line 11
+this is output line 12
+this is output line 13
+this is output line 14
+this is output line 15
+this is output line 16
+this is output line 17
+this is output line 18
+this is output line 19
+this is output line 20
+this is output line 21
+this is output line 22
+this is output line 23
+this is output line 24
+this is output line 25
+this is output line 26
+this is output line 27
+this is output line 28
+this is output line 29
+this is output line 30
+this is output line 31
+this is output line 32
+this is output line 33
+this is output line 34
+this is output line 35
+this is output line 36
+this is output line 37
+this is output line 38
+this is output line 39
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="colores-en-los-print">
+<h3><span class="section-number">1.1.5. </span>Colores en los print<a class="headerlink" href="#colores-en-los-print" title="Permalink to this heading">#</a></h3>
+<p>Veamos ahora los colores que podemos poner en los print de python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot; XYZ &quot;</span>
+<span class="n">formatstring</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\x1b</span><span class="s2">[</span><span class="si">{}</span><span class="s2">m&quot;</span> <span class="o">+</span> <span class="n">text</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\x1b</span><span class="s2">[m&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="mi">6</span>
+    <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="o">+</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;{:^</span><span class="si">{}</span><span class="s2">}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bg</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">))</span> <span class="k">for</span> <span class="n">bg</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">48</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="k">for</span> <span class="n">fg</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">38</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">bold</span> <span class="ow">in</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">fg_code</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;1;&quot;</span> <span class="k">if</span> <span class="n">bold</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fg</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot; </span><span class="si">{:&gt;4}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fg_code</span><span class="p">)</span>
+            <span class="o">+</span> <span class="n">formatstring</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fg_code</span><span class="p">)</span>
+            <span class="o">+</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="n">formatstring</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fg_code</span> <span class="o">+</span> <span class="s2">&quot;;&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">bg</span><span class="p">))</span> <span class="k">for</span> <span class="n">bg</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">48</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            40   41   42   43   44   45   46   47  
+   30 <span class=" -Color -Color-Black"> XYZ </span><span class=" -Color -Color-Black -Color-Black-BGBlack"> XYZ </span><span class=" -Color -Color-Black -Color-Black-BGRed"> XYZ </span><span class=" -Color -Color-Black -Color-Black-BGGreen"> XYZ </span><span class=" -Color -Color-Black -Color-Black-BGYellow"> XYZ </span><span class=" -Color -Color-Black -Color-Black-BGBlue"> XYZ </span><span class=" -Color -Color-Black -Color-Black-BGMagenta"> XYZ </span><span class=" -Color -Color-Black -Color-Black-BGCyan"> XYZ </span><span class=" -Color -Color-Black -Color-Black-BGWhite"> XYZ </span>
+ 1;30 <span class=" -Color -Color-Bold -Color-Bold-Black"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Black -Color-Bold-Black-BGBlack"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Black -Color-Bold-Black-BGRed"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Black -Color-Bold-Black-BGGreen"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Black -Color-Bold-Black-BGYellow"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Black -Color-Bold-Black-BGBlue"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Black -Color-Bold-Black-BGMagenta"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Black -Color-Bold-Black-BGCyan"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Black -Color-Bold-Black-BGWhite"> XYZ </span>
+   31 <span class=" -Color -Color-Red"> XYZ </span><span class=" -Color -Color-Red -Color-Red-BGBlack"> XYZ </span><span class=" -Color -Color-Red -Color-Red-BGRed"> XYZ </span><span class=" -Color -Color-Red -Color-Red-BGGreen"> XYZ </span><span class=" -Color -Color-Red -Color-Red-BGYellow"> XYZ </span><span class=" -Color -Color-Red -Color-Red-BGBlue"> XYZ </span><span class=" -Color -Color-Red -Color-Red-BGMagenta"> XYZ </span><span class=" -Color -Color-Red -Color-Red-BGCyan"> XYZ </span><span class=" -Color -Color-Red -Color-Red-BGWhite"> XYZ </span>
+ 1;31 <span class=" -Color -Color-Bold -Color-Bold-Red"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Red -Color-Bold-Red-BGBlack"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Red -Color-Bold-Red-BGRed"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Red -Color-Bold-Red-BGGreen"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Red -Color-Bold-Red-BGYellow"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Red -Color-Bold-Red-BGBlue"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Red -Color-Bold-Red-BGMagenta"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Red -Color-Bold-Red-BGCyan"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Red -Color-Bold-Red-BGWhite"> XYZ </span>
+   32 <span class=" -Color -Color-Green"> XYZ </span><span class=" -Color -Color-Green -Color-Green-BGBlack"> XYZ </span><span class=" -Color -Color-Green -Color-Green-BGRed"> XYZ </span><span class=" -Color -Color-Green -Color-Green-BGGreen"> XYZ </span><span class=" -Color -Color-Green -Color-Green-BGYellow"> XYZ </span><span class=" -Color -Color-Green -Color-Green-BGBlue"> XYZ </span><span class=" -Color -Color-Green -Color-Green-BGMagenta"> XYZ </span><span class=" -Color -Color-Green -Color-Green-BGCyan"> XYZ </span><span class=" -Color -Color-Green -Color-Green-BGWhite"> XYZ </span>
+ 1;32 <span class=" -Color -Color-Bold -Color-Bold-Green"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Green -Color-Bold-Green-BGBlack"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Green -Color-Bold-Green-BGRed"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Green -Color-Bold-Green-BGGreen"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Green -Color-Bold-Green-BGYellow"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Green -Color-Bold-Green-BGBlue"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Green -Color-Bold-Green-BGMagenta"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Green -Color-Bold-Green-BGCyan"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Green -Color-Bold-Green-BGWhite"> XYZ </span>
+   33 <span class=" -Color -Color-Yellow"> XYZ </span><span class=" -Color -Color-Yellow -Color-Yellow-BGBlack"> XYZ </span><span class=" -Color -Color-Yellow -Color-Yellow-BGRed"> XYZ </span><span class=" -Color -Color-Yellow -Color-Yellow-BGGreen"> XYZ </span><span class=" -Color -Color-Yellow -Color-Yellow-BGYellow"> XYZ </span><span class=" -Color -Color-Yellow -Color-Yellow-BGBlue"> XYZ </span><span class=" -Color -Color-Yellow -Color-Yellow-BGMagenta"> XYZ </span><span class=" -Color -Color-Yellow -Color-Yellow-BGCyan"> XYZ </span><span class=" -Color -Color-Yellow -Color-Yellow-BGWhite"> XYZ </span>
+ 1;33 <span class=" -Color -Color-Bold -Color-Bold-Yellow"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Yellow -Color-Bold-Yellow-BGBlack"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Yellow -Color-Bold-Yellow-BGRed"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Yellow -Color-Bold-Yellow-BGGreen"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Yellow -Color-Bold-Yellow-BGYellow"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Yellow -Color-Bold-Yellow-BGBlue"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Yellow -Color-Bold-Yellow-BGMagenta"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Yellow -Color-Bold-Yellow-BGCyan"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Yellow -Color-Bold-Yellow-BGWhite"> XYZ </span>
+   34 <span class=" -Color -Color-Blue"> XYZ </span><span class=" -Color -Color-Blue -Color-Blue-BGBlack"> XYZ </span><span class=" -Color -Color-Blue -Color-Blue-BGRed"> XYZ </span><span class=" -Color -Color-Blue -Color-Blue-BGGreen"> XYZ </span><span class=" -Color -Color-Blue -Color-Blue-BGYellow"> XYZ </span><span class=" -Color -Color-Blue -Color-Blue-BGBlue"> XYZ </span><span class=" -Color -Color-Blue -Color-Blue-BGMagenta"> XYZ </span><span class=" -Color -Color-Blue -Color-Blue-BGCyan"> XYZ </span><span class=" -Color -Color-Blue -Color-Blue-BGWhite"> XYZ </span>
+ 1;34 <span class=" -Color -Color-Bold -Color-Bold-Blue"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Blue -Color-Bold-Blue-BGBlack"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Blue -Color-Bold-Blue-BGRed"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Blue -Color-Bold-Blue-BGGreen"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Blue -Color-Bold-Blue-BGYellow"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Blue -Color-Bold-Blue-BGBlue"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Blue -Color-Bold-Blue-BGMagenta"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Blue -Color-Bold-Blue-BGCyan"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Blue -Color-Bold-Blue-BGWhite"> XYZ </span>
+   35 <span class=" -Color -Color-Magenta"> XYZ </span><span class=" -Color -Color-Magenta -Color-Magenta-BGBlack"> XYZ </span><span class=" -Color -Color-Magenta -Color-Magenta-BGRed"> XYZ </span><span class=" -Color -Color-Magenta -Color-Magenta-BGGreen"> XYZ </span><span class=" -Color -Color-Magenta -Color-Magenta-BGYellow"> XYZ </span><span class=" -Color -Color-Magenta -Color-Magenta-BGBlue"> XYZ </span><span class=" -Color -Color-Magenta -Color-Magenta-BGMagenta"> XYZ </span><span class=" -Color -Color-Magenta -Color-Magenta-BGCyan"> XYZ </span><span class=" -Color -Color-Magenta -Color-Magenta-BGWhite"> XYZ </span>
+ 1;35 <span class=" -Color -Color-Bold -Color-Bold-Magenta"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Magenta -Color-Bold-Magenta-BGBlack"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Magenta -Color-Bold-Magenta-BGRed"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Magenta -Color-Bold-Magenta-BGGreen"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Magenta -Color-Bold-Magenta-BGYellow"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Magenta -Color-Bold-Magenta-BGBlue"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Magenta -Color-Bold-Magenta-BGMagenta"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Magenta -Color-Bold-Magenta-BGCyan"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Magenta -Color-Bold-Magenta-BGWhite"> XYZ </span>
+   36 <span class=" -Color -Color-Cyan"> XYZ </span><span class=" -Color -Color-Cyan -Color-Cyan-BGBlack"> XYZ </span><span class=" -Color -Color-Cyan -Color-Cyan-BGRed"> XYZ </span><span class=" -Color -Color-Cyan -Color-Cyan-BGGreen"> XYZ </span><span class=" -Color -Color-Cyan -Color-Cyan-BGYellow"> XYZ </span><span class=" -Color -Color-Cyan -Color-Cyan-BGBlue"> XYZ </span><span class=" -Color -Color-Cyan -Color-Cyan-BGMagenta"> XYZ </span><span class=" -Color -Color-Cyan -Color-Cyan-BGCyan"> XYZ </span><span class=" -Color -Color-Cyan -Color-Cyan-BGWhite"> XYZ </span>
+ 1;36 <span class=" -Color -Color-Bold -Color-Bold-Cyan"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Cyan -Color-Bold-Cyan-BGBlack"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Cyan -Color-Bold-Cyan-BGRed"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Cyan -Color-Bold-Cyan-BGGreen"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Cyan -Color-Bold-Cyan-BGYellow"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Cyan -Color-Bold-Cyan-BGBlue"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Cyan -Color-Bold-Cyan-BGMagenta"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Cyan -Color-Bold-Cyan-BGCyan"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-Cyan -Color-Bold-Cyan-BGWhite"> XYZ </span>
+   37 <span class=" -Color -Color-White"> XYZ </span><span class=" -Color -Color-White -Color-White-BGBlack"> XYZ </span><span class=" -Color -Color-White -Color-White-BGRed"> XYZ </span><span class=" -Color -Color-White -Color-White-BGGreen"> XYZ </span><span class=" -Color -Color-White -Color-White-BGYellow"> XYZ </span><span class=" -Color -Color-White -Color-White-BGBlue"> XYZ </span><span class=" -Color -Color-White -Color-White-BGMagenta"> XYZ </span><span class=" -Color -Color-White -Color-White-BGCyan"> XYZ </span><span class=" -Color -Color-White -Color-White-BGWhite"> XYZ </span>
+ 1;37 <span class=" -Color -Color-Bold -Color-Bold-White"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-White -Color-Bold-White-BGBlack"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-White -Color-Bold-White-BGRed"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-White -Color-Bold-White-BGGreen"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-White -Color-Bold-White-BGYellow"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-White -Color-Bold-White-BGBlue"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-White -Color-Bold-White-BGMagenta"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-White -Color-Bold-White-BGCyan"> XYZ </span><span class=" -Color -Color-Bold -Color-Bold-White -Color-Bold-White-BGWhite"> XYZ </span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="glue-para-insertar-variables-en-el-texto">
+<h2><a class="toc-backref" href="#id2"><span class="section-number">1.2. </span>glue para insertar variables en el texto</a><a class="headerlink" href="#glue-para-insertar-variables-en-el-texto" title="Permalink to this heading">#</a></h2>
+<section id="gluing-variables-en-el-notebook">
+<h3><span class="section-number">1.2.1. </span>“Gluing” variables en el notebook<a class="headerlink" href="#gluing-variables-en-el-notebook" title="Permalink to this heading">#</a></h3>
+<p>Tenemos que importar la función <code class="docutils literal notranslate"><span class="pre">glue()</span></code> de la libreria <code class="docutils literal notranslate"><span class="pre">myst_nb</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Veamos un ejemplo de como usarlo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_variable</span> <span class="o">=</span> <span class="s2">&quot;here is some text!&quot;</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;cool_text&quot;</span><span class="p">,</span> <span class="n">my_variable</span><span class="p">,</span>  <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para llamarla usamos <code class="docutils literal notranslate"><span class="pre">{glue:}`cool_text`</span></code>: <span class="output text_plain">‘here is some text!’</span></p>
+</section>
+<section id="gluing-numeros-plots-math-y-tablas">
+<h3><span class="section-number">1.2.2. </span>“Gluing” numeros, plots. math y tablas<a class="headerlink" href="#gluing-numeros-plots-math-y-tablas" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate some data and bootstrap the mean of the data</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">n_points</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">n_boots</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">mean</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">.2</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">sd</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_points</span><span class="p">)</span> <span class="o">+</span> <span class="n">mean</span>
+<span class="n">bootstrap_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_points</span><span class="p">,</span> <span class="n">n_points</span><span class="o">*</span><span class="n">n_boots</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">n_boots</span><span class="p">,</span> <span class="n">n_points</span><span class="p">))</span>
+
+<span class="c1"># Calculate the mean of a bunch of random samples</span>
+<span class="n">means</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">bootstrap_indices</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Calculate the 95% confidence interval for the mean</span>
+<span class="n">clo</span><span class="p">,</span> <span class="n">chi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">means</span><span class="p">,</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">97.5</span><span class="p">])</span>
+
+<span class="c1"># Visualize the histogram with the intervals</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">means</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ln</span> <span class="ow">in</span> <span class="p">[</span><span class="n">clo</span><span class="p">,</span> <span class="n">chi</span><span class="p">]:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">ln</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Bootstrap distribution and 95% CI&quot;</span><span class="p">)</span>
+
+<span class="c1"># And a wider figure to show a timeseries</span>
+<span class="n">fig2</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">means</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+
+
+<span class="c1"># Store the values in our notebook</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;boot_mean&quot;</span><span class="p">,</span> <span class="n">means</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># numero</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;boot_clo&quot;</span><span class="p">,</span> <span class="n">clo</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>           <span class="c1"># numero</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;boot_chi&quot;</span><span class="p">,</span> <span class="n">chi</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>           <span class="c1"># numero</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;boot_fig&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>           <span class="c1"># Plot</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;sorted_means_fig&quot;</span><span class="p">,</span> <span class="n">fig2</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Plot</span>
+
+<span class="c1"># Dataframes</span>
+
+<span class="n">bootstrap_subsets</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">bootstrap_indices</span><span class="p">][:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">bootstrap_subsets</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="s2">&quot;second&quot;</span><span class="p">,</span> <span class="s2">&quot;third&quot;</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;df_tbl&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>first</th>
+      <th>second</th>
+      <th>third</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.864279</td>
+      <td>3.096170</td>
+      <td>3.040294</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.850520</td>
+      <td>3.582923</td>
+      <td>2.632284</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.182612</td>
+      <td>3.026727</td>
+      <td>3.013184</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.159771</td>
+      <td>2.793257</td>
+      <td>3.151598</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3.087032</td>
+      <td>3.159038</td>
+      <td>3.132074</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="../_images/374c4f574ad7f704345e02f565e8d3e68cfc5199e0048c646a06fdce10717658.png" src="../_images/374c4f574ad7f704345e02f565e8d3e68cfc5199e0048c646a06fdce10717658.png" />
+<img alt="../_images/63154edfac87dcf5eed7313effd8018b3e42af4c28e07b22ea99ae3318bde508.png" src="../_images/63154edfac87dcf5eed7313effd8018b3e42af4c28e07b22ea99ae3318bde508.png" />
+</div>
+</div>
+</section>
+<section id="pasting-las-variables">
+<h3><span class="section-number">1.2.3. </span>“Pasting” las variables<a class="headerlink" href="#pasting-las-variables" title="Permalink to this heading">#</a></h3>
+<section id="glue-any-sin-formato">
+<h4><span class="section-number">1.2.3.1. </span>glue:any (sin formato)<a class="headerlink" href="#glue-any-sin-formato" title="Permalink to this heading">#</a></h4>
+<p>Por defecto, al usar <code class="docutils literal notranslate"><span class="pre">{glue:}</span></code> estamos usando <code class="docutils literal notranslate"><span class="pre">{glue:any}</span></code>, que pega la salida
+“encolada” en línea o como bloque, respectivamente, sin formato adicional.</p>
+<p>Veamos un ejemplo:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>In-line text; {glue:}`boot_mean`, and a figure: {glue:}`boot_fig`.
+</pre></div>
+</div>
+<p>In-line text; <span class="output text_plain">2.99758724978736</span>, and a figure: <img alt="../_images/374c4f574ad7f704345e02f565e8d3e68cfc5199e0048c646a06fdce10717658.png" src="../_images/374c4f574ad7f704345e02f565e8d3e68cfc5199e0048c646a06fdce10717658.png" />.</p>
+</section>
+<section id="glue-text">
+<h4><span class="section-number">1.2.3.2. </span>glue:text<a class="headerlink" href="#glue-text" title="Permalink to this heading">#</a></h4>
+<p>El <code class="docutils literal notranslate"><span class="pre">glue:text</span></code> es específico àra textos planos. Veamos un ejemplo:</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The mean of the bootstrapped distribution was {glue:text}`boot_mean` (95% confidence interval {glue:text}`boot_clo`/{glue:text}`boot_chi`).
+</pre></div>
+</div>
+<p>The mean of the bootstrapped distribution was <span class="pasted-text">2.99758724978736</span> (95% confidence interval <span class="pasted-text">2.985312582852057</span>/<span class="pasted-text">3.0098125309029817</span>).</p>
+</div></blockquote>
+<p>Podemos darle formato al output, como redondear números. La sintaxis es</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{glue:text}`mykey:formatstring`</span></code></p></li>
+</ul>
+<p>Por ejemplo:</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Media: {glue:text}`boot_mean``
+
+Media redondeada: {glue:text}`boot_mean:.2f`
+</pre></div>
+</div>
+<p>Media: <span class="pasted-text">2.99758724978736</span></p>
+<p>Media redondeada: <span class="pasted-text">3.00</span></p>
+</div></blockquote>
+</section>
+<section id="glue-figure">
+<h4><span class="section-number">1.2.3.3. </span>glue:figure<a class="headerlink" href="#glue-figure" title="Permalink to this heading">#</a></h4>
+<p>Sirve para figuras y tablas (dataframes).</p>
+<p>Figura:</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{glue:figure} boot_fig
+:figwidth: 300px
+:name: &quot;fig-boot&quot;
+
+This is a **caption**, with an embedded `{glue:text}` element: {glue:text}`boot_mean:.2f`!
+```
+</pre></div>
+</div>
+<figure class="align-default" id="fig-boot" style="width: 300px">
+<img alt="../_images/374c4f574ad7f704345e02f565e8d3e68cfc5199e0048c646a06fdce10717658.png" src="../_images/374c4f574ad7f704345e02f565e8d3e68cfc5199e0048c646a06fdce10717658.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">This is a <strong>caption</strong>, with an embedded <code class="docutils literal notranslate"><span class="pre">{glue:text}</span></code> element: <span class="pasted-text">3.00</span>!</span><a class="headerlink" href="#fig-boot" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Here is a {ref}`reference to the figure &lt;fig-boot&gt;`
+</pre></div>
+</div>
+<p>Here is a <a class="reference internal" href="#fig-boot"><span class="std std-ref">reference to the figure</span></a></p>
+</div></blockquote>
+<p>Dataframe:</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>```{glue:figure} df_tbl
+:figwidth: 300px
+:name: &quot;tbl:df&quot;
+
+A caption for a pandas table.
+```
+</pre></div>
+</div>
+<figure class="align-default" id="tbl-df" style="width: 300px">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>first</th>
+      <th>second</th>
+      <th>third</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.864279</td>
+      <td>3.096170</td>
+      <td>3.040294</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.850520</td>
+      <td>3.582923</td>
+      <td>2.632284</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.182612</td>
+      <td>3.026727</td>
+      <td>3.013184</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.159771</td>
+      <td>2.793257</td>
+      <td>3.151598</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3.087032</td>
+      <td>3.159038</td>
+      <td>3.132074</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><figcaption>
+<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">A caption for a pandas table.</span><a class="headerlink" href="#tbl-df" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</section>
+</section>
+</section>
+<section id="estadisticas-de-las-ejecuciones">
+<h2><a class="toc-backref" href="#id3"><span class="section-number">1.3. </span>Estadisticas de las ejecuciones</a><a class="headerlink" href="#estadisticas-de-las-ejecuciones" title="Permalink to this heading">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Document</p></th>
+<th class="head"><p>Modified</p></th>
+<th class="head"><p>Method</p></th>
+<th class="head"><p>Run Time (s)</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="xref doc reference internal" href="#"><span class="doc">docs/01_00_sec_Code_Blocks_y_Ecuaciones</span></a></p></td>
+<td><p>2023-12-04 12:31</p></td>
+<td><p>cache</p></td>
+<td><p>1.83</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="xref doc reference internal" href="02_00_Roles_and_directives.html"><span class="doc">docs/02_00_Roles_and_directives</span></a></p></td>
+<td><p>2023-11-30 10:00</p></td>
+<td><p>cache</p></td>
+<td><p>0.68</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="xref doc reference internal" href="02_01_Cuadros.html"><span class="doc">docs/02_01_Cuadros</span></a></p></td>
+<td><p>2023-11-30 10:00</p></td>
+<td><p>cache</p></td>
+<td><p>0.68</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="xref doc reference internal" href="02_02_Footnotes.html"><span class="doc">docs/02_02_Footnotes</span></a></p></td>
+<td><p>2023-11-30 10:00</p></td>
+<td><p>cache</p></td>
+<td><p>0.68</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="xref doc reference internal" href="02_03_Figuras.html"><span class="doc">docs/02_03_Figuras</span></a></p></td>
+<td><p>2023-11-30 10:00</p></td>
+<td><p>cache</p></td>
+<td><p>0.68</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="xref doc reference internal" href="02_04_Mas_cosas.html"><span class="doc">docs/02_04_Mas_cosas</span></a></p></td>
+<td><p>2023-11-30 10:00</p></td>
+<td><p>cache</p></td>
+<td><p>0.68</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="xref doc reference internal" href="03_00_referenciar_cosas.html"><span class="doc">docs/03_00_referenciar_cosas</span></a></p></td>
+<td><p>2023-11-30 10:00</p></td>
+<td><p>cache</p></td>
+<td><p>0.68</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="xref doc reference internal" href="04_00_Teoremas_pruebas_y_algoritmos.html"><span class="doc">docs/04_00_Teoremas_pruebas_y_algoritmos</span></a></p></td>
+<td><p>2023-11-30 10:00</p></td>
+<td><p>cache</p></td>
+<td><p>0.68</p></td>
+<td><p>✅</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="ecuaciones">
-<h2><a class="toc-backref" href="#id2"><span class="section-number">1.2. </span>Ecuaciones</a><a class="headerlink" href="#ecuaciones" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-476eb4db-1233-4101-84d1-6f947d2cd340">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-476eb4db-1233-4101-84d1-6f947d2cd340" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<h2><a class="toc-backref" href="#id4"><span class="section-number">1.4. </span>Ecuaciones</a><a class="headerlink" href="#ecuaciones" title="Permalink to this heading">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-6fc77e99-bf1f-413f-86d9-13db2ee617d5">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-6fc77e99-bf1f-413f-86d9-13db2ee617d5" title="Permalink to this equation">#</a></span>\[\begin{equation} 
     f(x) = x^2 
 \end{equation}\]</div>
 <div class="math notranslate nohighlight" id="equation-my-other-label">
@@ -500,8 +1136,27 @@ multi-line caption. It is <em>pretty nifty</em> ;-)</span><a class="headerlink" 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">1.1. Code blocks and outputs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones">1.2. Ecuaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">1.1. Code blocks and outputs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-no-ejecutables-pero-numeradas-y-con-formato">1.1.1. Celdas no ejecutables pero numeradas y con formato</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-con-salida-de-error">1.1.2. Celdas con salida de error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-desplegables">1.1.3. Celdas desplegables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-con-scroll">1.1.4. Celdas con scroll</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colores-en-los-print">1.1.5. Colores en los print</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-para-insertar-variables-en-el-texto">1.2. glue para insertar variables en el texto</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gluing-variables-en-el-notebook">1.2.1. “Gluing” variables en el notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gluing-numeros-plots-math-y-tablas">1.2.2. “Gluing” numeros, plots. math y tablas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pasting-las-variables">1.2.3. “Pasting” las variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-any-sin-formato">1.2.3.1. glue:any (sin formato)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-text">1.2.3.2. glue:text</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-figure">1.2.3.3. glue:figure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-de-las-ejecuciones">1.3. Estadisticas de las ejecuciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones">1.4. Ecuaciones</a></li>
 </ul>
   </nav></div>
 

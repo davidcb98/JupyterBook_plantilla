@@ -14,6 +14,8 @@ parts:
     - file: docs/02_03_Figuras
     - file: docs/02_04_Mas_cosas
   - file: docs/03_00_referenciar_cosas
+  - file: docs/04_00_Teoremas_pruebas_y_algoritmos.md
+
 
 
 #- caption: Part 1

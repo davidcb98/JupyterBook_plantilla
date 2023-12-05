@@ -10,7 +10,20 @@ description: >-
 only_build_toc_files          : true  # Only build files in _toc
 
 execute:
+  #execute_notebooks           : auto     # Por defecto. Ejecuta si hay cambios en las celdas
   execute_notebooks           : cache
+  #execute_notebooks           : force
+  #execute_notebooks           : inline
+  #execute_notebooks           : 'off'
+
+  exclude_patterns:
+    - 'pattern1'
+    - 'pattern2'
+    - '*pattern3withwildcard'
+
+  timeout: 100
+  allow_errors: true
+  stderr_output: show
 
 # HTML-specific settings
 html:
@@ -36,6 +49,10 @@ bibtex_bibfiles:
 # sphinx:
 #  config:
 #    bibtex_reference_style: 'author_year'
+
+sphinx:
+  extra_extensions:
+    - sphinx_proof
 
 latex:
   latex_engine                : "xelatex"
