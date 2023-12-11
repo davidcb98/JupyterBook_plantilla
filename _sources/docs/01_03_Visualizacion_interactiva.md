@@ -54,3 +54,61 @@ sphinx:
 ```
 ````
 
+```{important}
+Including plotly plots in a Jupyter Book page is currently not compatible with the dollarmath syntax extension (mathematical notation written between two “$” characters). If you are trying to include both plotly plots and mathematical notation within the same page, and finding that plotly plots are not being rendered, this may be the cause. Try removing all use of the dollarmath syntax within the page and rebuilding the book.
+```
+
+```{code-cell} ipython3
+import plotly.io as pio
+import plotly.express as px
+import plotly.offline as py
+
+df = px.data.iris()
+fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species", size="sepal_length")
+fig
+```
+
+
+## Bokeh
+
+Puede verse [aquí](https://docs.bokeh.org/en/latest/docs/first_steps.html) la documentación y como instalarlo
+
+```{code-cell} ipython3
+from bokeh.plotting import figure, show, output_notebook
+output_notebook()
+
+p = figure()
+p.circle(data["sepal_width"], data["sepal_length"], fill_color=data["species"], size=data["sepal_length"])
+show(p)
+```
+
+
+## ipywidgets
+
+```{code-cell} ipython3
+import ipywidgets as widgets
+```
+```{code-cell} ipython3
+widgets.IntSlider(
+    value=7,
+    min=0,
+    max=10,
+    step=1,
+    description='Test:',
+    disabled=False,
+    continuous_update=False,
+    orientation='horizontal',
+    readout=True,
+    readout_format='d'
+)
+```
+
+```{code-cell} ipython3
+tab_contents = ['P0', 'P1', 'P2', 'P3', 'P4']
+children = [widgets.Text(description=name) for name in tab_contents]
+tab = widgets.Tab()
+tab.children = children
+for ii in range(len(children)):
+    tab.set_title(ii, f"tab_{ii}")
+tab
+```
