@@ -232,19 +232,19 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/davidcb98/JupyterBook_plantilla/master?urlpath=tree/mini_book/docs/02_04_Mas_cosas.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
+  <i class="fas fa-play"></i>
   </span>
-<span class="btn__text-container">Binder</span>
-</a>
+<span class="btn__text-container">Live Code</span>
+</button>
 </li>
       
   </ul>
@@ -717,7 +717,7 @@ Java</label><div class="sd-tab-content docutils">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "davidcb98/JupyterBook_plantilla",
             ref: "master",
         },
         codeMirrorConfig: {
