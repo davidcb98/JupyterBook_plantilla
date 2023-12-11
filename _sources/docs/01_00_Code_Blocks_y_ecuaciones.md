@@ -17,3 +17,6 @@ kernelspec:
 # Code Blocks y ecuaciones
 
 Veamos como escrirbir bloques de código así como ecuaciones en JupyterBook usando MyST.
+
+```{tableofcontents}
+```
