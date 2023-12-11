@@ -55,6 +55,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -162,8 +163,13 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_00_sec_Code_Blocks_y_Ecuaciones.html">1. Code Blocks y Ecuaciones</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="02_00_Roles_and_directives.html">2. Roles and directives</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="01_00_Code_Blocks_y_ecuaciones.html">1. Code Blocks y ecuaciones</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_01_Code_Blocks.html">1.1. Code cells y code Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_02_Ecuaciones.html">1.2. Ecuaciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_03_Visualizacion_interactiva.html">1.3. Visualización interactiva de datos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="02_00_Roles_and_directives.html">2. Roles and directives</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1. Cuadros (admonitions)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_02_Footnotes.html">2.2. Footnotes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_03_Figuras.html">2.3. Figuras</a></li>
@@ -334,7 +340,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <blockquote>
-<div><p>Dec 04, 2023 | 284 words | 1 min read</p>
+<div><p>Dec 11, 2023 | 284 words | 1 min read</p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="cuadros-admonitions">
 <h1><span class="section-number">2.1. </span>Cuadros (admonitions)<a class="headerlink" href="#cuadros-admonitions" title="Permalink to this heading">#</a></h1>

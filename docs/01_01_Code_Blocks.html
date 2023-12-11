@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Code Blocks y Ecuaciones &#8212; Scientific Python QuickStart</title>
+    <title>1.1. Code cells y code Blocks &#8212; Scientific Python QuickStart</title>
   
   
   
@@ -55,6 +55,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -65,11 +66,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/01_00_sec_Code_Blocks_y_Ecuaciones';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/01_01_Code_Blocks';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Roles and directives" href="02_00_Roles_and_directives.html" />
-    <link rel="prev" title="Comandos de JupyterBooks" href="index.html" />
+    <link rel="next" title="1.2. Ecuaciones" href="01_02_Ecuaciones.html" />
+    <link rel="prev" title="1. Code Blocks y ecuaciones" href="01_00_Code_Blocks_y_ecuaciones.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,8 +165,13 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Code Blocks y Ecuaciones</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="02_00_Roles_and_directives.html">2. Roles and directives</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="01_00_Code_Blocks_y_ecuaciones.html">1. Code Blocks y ecuaciones</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. Code cells y code Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_02_Ecuaciones.html">1.2. Ecuaciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_03_Visualizacion_interactiva.html">1.3. Visualización interactiva de datos</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="02_00_Roles_and_directives.html">2. Roles and directives</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="02_01_Cuadros.html">2.1. Cuadros (admonitions)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_02_Footnotes.html">2.2. Footnotes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_03_Figuras.html">2.3. Figuras</a></li>
@@ -228,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/docs/01_00_sec_Code_Blocks_y_Ecuaciones.md" target="_blank"
+      <li><a href="../_sources/docs/01_01_Code_Blocks.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +316,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Code Blocks y Ecuaciones</h1>
+    <h1>Code cells y code Blocks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -320,29 +326,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">1.1. Code blocks and outputs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-no-ejecutables-pero-numeradas-y-con-formato">1.1.1. Celdas no ejecutables pero numeradas y con formato</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-con-salida-de-error">1.1.2. Celdas con salida de error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-desplegables">1.1.3. Celdas desplegables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-con-scroll">1.1.4. Celdas con scroll</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colores-en-los-print">1.1.5. Colores en los print</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">1.1.1. Code blocks and outputs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-no-ejecutables-pero-numeradas-y-con-formato">1.1.1.1. Celdas no ejecutables pero numeradas y con formato</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-con-salida-de-error">1.1.1.2. Celdas con salida de error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-desplegables">1.1.1.3. Celdas desplegables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-con-scroll">1.1.1.4. Celdas con scroll</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colores-en-los-print">1.1.1.5. Colores en los print</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-para-insertar-variables-en-el-texto">1.2. glue para insertar variables en el texto</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gluing-variables-en-el-notebook">1.2.1. “Gluing” variables en el notebook</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gluing-numeros-plots-math-y-tablas">1.2.2. “Gluing” numeros, plots. math y tablas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pasting-las-variables">1.2.3. “Pasting” las variables</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-any-sin-formato">1.2.3.1. glue:any (sin formato)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-text">1.2.3.2. glue:text</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-figure">1.2.3.3. glue:figure</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-math">1.2.3.4. glue:math</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-para-insertar-variables-en-el-texto">1.1.2. glue para insertar variables en el texto</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gluing-variables-en-el-notebook">1.1.2.1. “Gluing” variables en el notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gluing-numeros-plots-math-y-tablas">1.1.2.2. “Gluing” numeros, plots. math y tablas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pasting-las-variables">1.1.2.3. “Pasting” las variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-any-sin-formato">1.1.2.3.1. glue:any (sin formato)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-text">1.1.2.3.2. glue:text</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-figure">1.1.2.3.3. glue:figure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-math">1.1.2.3.4. glue:math</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pasting-en-tablas">1.2.4. “Pasting” en tablas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pasting-en-tablas">1.1.2.4. “Pasting” en tablas</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-de-las-ejecuciones">1.3. Estadisticas de las ejecuciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones">1.4. Ecuaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-de-las-ejecuciones">1.1.3. Estadisticas de las ejecuciones</a></li>
 </ul>
             </nav>
         </div>
@@ -355,21 +360,20 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <blockquote>
-<div><p>Dec 11, 2023 | 287 words | 1 min read</p>
+<div><p>Dec 11, 2023 | 266 words | 1 min read</p>
 </div></blockquote>
-<section class="tex2jax_ignore mathjax_ignore" id="code-blocks-y-ecuaciones">
-<span id="sec-code-blocks-y-ecuaciones"></span><h1><span class="section-number">1. </span>Code Blocks y Ecuaciones<a class="headerlink" href="#code-blocks-y-ecuaciones" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="code-cells-y-code-blocks">
+<span id="sec-code-blocks"></span><h1><span class="section-number">1.1. </span>Code cells y code Blocks<a class="headerlink" href="#code-cells-y-code-blocks" title="Permalink to this heading">#</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#code-blocks-and-outputs" id="id1">Code blocks and outputs</a></p></li>
 <li><p><a class="reference internal" href="#glue-para-insertar-variables-en-el-texto" id="id2">glue para insertar variables en el texto</a></p></li>
 <li><p><a class="reference internal" href="#estadisticas-de-las-ejecuciones" id="id3">Estadisticas de las ejecuciones</a></p></li>
-<li><p><a class="reference internal" href="#ecuaciones" id="id4">Ecuaciones</a></p></li>
 </ul>
 </div>
 <p>En realidad no es necesario poner este indice local. Ya hay el indice de la izquierda y este te pone en azul los titulos de las secciones.</p>
 <section id="code-blocks-and-outputs">
-<h2><a class="toc-backref" href="#id1"><span class="section-number">1.1. </span>Code blocks and outputs</a><a class="headerlink" href="#code-blocks-and-outputs" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id1"><span class="section-number">1.1.1. </span>Code blocks and outputs</a><a class="headerlink" href="#code-blocks-and-outputs" title="Permalink to this heading">#</a></h2>
 <p>Los code block son un tipo de (directives)[./Roles_and_directives.md].</p>
 <p>Jupyter Book will also embed your code blocks and output in your book.
 For example, here’s some sample Matplotlib code:</p>
@@ -419,7 +423,7 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 </div>
 <section id="celdas-no-ejecutables-pero-numeradas-y-con-formato">
-<h3><span class="section-number">1.1.1. </span>Celdas no ejecutables pero numeradas y con formato<a class="headerlink" href="#celdas-no-ejecutables-pero-numeradas-y-con-formato" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.1.1. </span>Celdas no ejecutables pero numeradas y con formato<a class="headerlink" href="#celdas-no-ejecutables-pero-numeradas-y-con-formato" title="Permalink to this heading">#</a></h3>
 <div class="literal-block-wrapper docutils container" id="label-codeblock">
 <div class="code-block-caption"><span class="caption-number">Listing 1.1 </span><span class="caption-text">This is my
 multi-line caption. It is <em>pretty nifty</em> ;-)</span><a class="headerlink" href="#label-codeblock" title="Permalink to this code">#</a></div>
@@ -431,7 +435,7 @@ multi-line caption. It is <em>pretty nifty</em> ;-)</span><a class="headerlink" 
 </div>
 </section>
 <section id="celdas-con-salida-de-error">
-<h3><span class="section-number">1.1.2. </span>Celdas con salida de error<a class="headerlink" href="#celdas-con-salida-de-error" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.1.2. </span>Celdas con salida de error<a class="headerlink" href="#celdas-con-salida-de-error" title="Permalink to this heading">#</a></h3>
 <p>Prueba de celda que da error</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -452,7 +456,7 @@ multi-line caption. It is <em>pretty nifty</em> ;-)</span><a class="headerlink" 
 </div>
 </section>
 <section id="celdas-desplegables">
-<h3><span class="section-number">1.1.3. </span>Celdas desplegables<a class="headerlink" href="#celdas-desplegables" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.1.3. </span>Celdas desplegables<a class="headerlink" href="#celdas-desplegables" title="Permalink to this heading">#</a></h3>
 <p>Veamos una celda desplegable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -600,7 +604,7 @@ multi-line caption. It is <em>pretty nifty</em> ;-)</span><a class="headerlink" 
 </div>
 </section>
 <section id="celdas-con-scroll">
-<h3><span class="section-number">1.1.4. </span>Celdas con scroll<a class="headerlink" href="#celdas-con-scroll" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.1.4. </span>Celdas con scroll<a class="headerlink" href="#celdas-con-scroll" title="Permalink to this heading">#</a></h3>
 <p>Veamos una celca con scroll en la salida</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
@@ -656,7 +660,7 @@ this is output line 39
 </div>
 </section>
 <section id="colores-en-los-print">
-<h3><span class="section-number">1.1.5. </span>Colores en los print<a class="headerlink" href="#colores-en-los-print" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.1.5. </span>Colores en los print<a class="headerlink" href="#colores-en-los-print" title="Permalink to this heading">#</a></h3>
 <p>Veamos ahora los colores que podemos poner en los print de python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -706,9 +710,9 @@ this is output line 39
 </section>
 </section>
 <section id="glue-para-insertar-variables-en-el-texto">
-<h2><a class="toc-backref" href="#id2"><span class="section-number">1.2. </span>glue para insertar variables en el texto</a><a class="headerlink" href="#glue-para-insertar-variables-en-el-texto" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2"><span class="section-number">1.1.2. </span>glue para insertar variables en el texto</a><a class="headerlink" href="#glue-para-insertar-variables-en-el-texto" title="Permalink to this heading">#</a></h2>
 <section id="gluing-variables-en-el-notebook">
-<h3><span class="section-number">1.2.1. </span>“Gluing” variables en el notebook<a class="headerlink" href="#gluing-variables-en-el-notebook" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.2.1. </span>“Gluing” variables en el notebook<a class="headerlink" href="#gluing-variables-en-el-notebook" title="Permalink to this heading">#</a></h3>
 <p>Tenemos que importar la función <code class="docutils literal notranslate"><span class="pre">glue()</span></code> de la libreria <code class="docutils literal notranslate"><span class="pre">myst_nb</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -729,7 +733,7 @@ this is output line 39
 <p>Para llamarla usamos <code class="docutils literal notranslate"><span class="pre">{glue:}`cool_text`</span></code>: <span class="output text_plain">‘here is some text!’</span></p>
 </section>
 <section id="gluing-numeros-plots-math-y-tablas">
-<h3><span class="section-number">1.2.2. </span>“Gluing” numeros, plots. math y tablas<a class="headerlink" href="#gluing-numeros-plots-math-y-tablas" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.2.2. </span>“Gluing” numeros, plots. math y tablas<a class="headerlink" href="#gluing-numeros-plots-math-y-tablas" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate some data and bootstrap the mean of the data</span>
@@ -843,9 +847,9 @@ this is output line 39
 </div>
 </section>
 <section id="pasting-las-variables">
-<h3><span class="section-number">1.2.3. </span>“Pasting” las variables<a class="headerlink" href="#pasting-las-variables" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.2.3. </span>“Pasting” las variables<a class="headerlink" href="#pasting-las-variables" title="Permalink to this heading">#</a></h3>
 <section id="glue-any-sin-formato">
-<h4><span class="section-number">1.2.3.1. </span>glue:any (sin formato)<a class="headerlink" href="#glue-any-sin-formato" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.1.2.3.1. </span>glue:any (sin formato)<a class="headerlink" href="#glue-any-sin-formato" title="Permalink to this heading">#</a></h4>
 <p>Por defecto, al usar <code class="docutils literal notranslate"><span class="pre">{glue:}</span></code> estamos usando <code class="docutils literal notranslate"><span class="pre">{glue:any}</span></code>, que pega la salida
 “encolada” en línea o como bloque, respectivamente, sin formato adicional.</p>
 <p>Veamos un ejemplo:</p>
@@ -855,7 +859,7 @@ this is output line 39
 <p>In-line text; <span class="output text_plain">2.99758724978736</span>, and a figure: <img alt="../_images/374c4f574ad7f704345e02f565e8d3e68cfc5199e0048c646a06fdce10717658.png" src="../_images/374c4f574ad7f704345e02f565e8d3e68cfc5199e0048c646a06fdce10717658.png" />.</p>
 </section>
 <section id="glue-text">
-<h4><span class="section-number">1.2.3.2. </span>glue:text<a class="headerlink" href="#glue-text" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.1.2.3.2. </span>glue:text<a class="headerlink" href="#glue-text" title="Permalink to this heading">#</a></h4>
 <p>El <code class="docutils literal notranslate"><span class="pre">glue:text</span></code> es específico àra textos planos. Veamos un ejemplo:</p>
 <blockquote>
 <div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The mean of the bootstrapped distribution was {glue:text}`boot_mean` (95% confidence interval {glue:text}`boot_clo`/{glue:text}`boot_chi`).
@@ -879,7 +883,7 @@ Media redondeada: {glue:text}`boot_mean:.2f`
 </div></blockquote>
 </section>
 <section id="glue-figure">
-<h4><span class="section-number">1.2.3.3. </span>glue:figure<a class="headerlink" href="#glue-figure" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.1.2.3.3. </span>glue:figure<a class="headerlink" href="#glue-figure" title="Permalink to this heading">#</a></h4>
 <p>Sirve para figuras y tablas (dataframes).</p>
 <p>Figura:</p>
 <blockquote>
@@ -976,7 +980,7 @@ A caption for a pandas table.
 </div></blockquote>
 </section>
 <section id="glue-math">
-<h4><span class="section-number">1.2.3.4. </span>glue:math<a class="headerlink" href="#glue-math" title="Permalink to this heading">#</a></h4>
+<h4><span class="section-number">1.1.2.3.4. </span>glue:math<a class="headerlink" href="#glue-math" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -1001,7 +1005,7 @@ A caption for a pandas table.
 </section>
 </section>
 <section id="pasting-en-tablas">
-<h3><span class="section-number">1.2.4. </span>“Pasting” en tablas<a class="headerlink" href="#pasting-en-tablas" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.2.4. </span>“Pasting” en tablas<a class="headerlink" href="#pasting-en-tablas" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>| name                            |       plot                    | mean                      | ci                                                |
 |:-------------------------------:|:-----------------------------:|---------------------------|---------------------------------------------------|
@@ -1034,7 +1038,7 @@ A caption for a pandas table.
 </section>
 </section>
 <section id="estadisticas-de-las-ejecuciones">
-<h2><a class="toc-backref" href="#id3"><span class="section-number">1.3. </span>Estadisticas de las ejecuciones</a><a class="headerlink" href="#estadisticas-de-las-ejecuciones" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3"><span class="section-number">1.1.3. </span>Estadisticas de las ejecuciones</a><a class="headerlink" href="#estadisticas-de-las-ejecuciones" title="Permalink to this heading">#</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Document</p></th>
@@ -1045,49 +1049,67 @@ A caption for a pandas table.
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="xref doc reference internal" href="#"><span class="doc">docs/01_00_sec_Code_Blocks_y_Ecuaciones</span></a></p></td>
-<td><p>2023-12-11 10:16</p></td>
+<tr class="row-even"><td><p><a class="xref doc reference internal" href="01_00_Code_Blocks_y_ecuaciones.html"><span class="doc">docs/01_00_Code_Blocks_y_ecuaciones</span></a></p></td>
+<td><p>2023-11-30 10:00</p></td>
+<td><p>cache</p></td>
+<td><p>0.68</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="xref doc reference internal" href="#"><span class="doc">docs/01_01_Code_Blocks</span></a></p></td>
+<td><p>2023-12-11 09:16</p></td>
 <td><p>cache</p></td>
 <td><p>2.44</p></td>
 <td><p>✅</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="xref doc reference internal" href="02_00_Roles_and_directives.html"><span class="doc">docs/02_00_Roles_and_directives</span></a></p></td>
+<tr class="row-even"><td><p><a class="xref doc reference internal" href="01_02_Ecuaciones.html"><span class="doc">docs/01_02_Ecuaciones</span></a></p></td>
 <td><p>2023-11-30 10:00</p></td>
 <td><p>cache</p></td>
 <td><p>0.68</p></td>
 <td><p>✅</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="xref doc reference internal" href="02_01_Cuadros.html"><span class="doc">docs/02_01_Cuadros</span></a></p></td>
+<tr class="row-odd"><td><p><a class="xref doc reference internal" href="01_03_Visualizacion_interactiva.html"><span class="doc">docs/01_03_Visualizacion_interactiva</span></a></p></td>
+<td><p>2023-12-11 09:52</p></td>
+<td><p>cache</p></td>
+<td><p>1.32</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="xref doc reference internal" href="02_00_Roles_and_directives.html"><span class="doc">docs/02_00_Roles_and_directives</span></a></p></td>
 <td><p>2023-11-30 10:00</p></td>
 <td><p>cache</p></td>
 <td><p>0.68</p></td>
 <td><p>✅</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="xref doc reference internal" href="02_02_Footnotes.html"><span class="doc">docs/02_02_Footnotes</span></a></p></td>
+<tr class="row-odd"><td><p><a class="xref doc reference internal" href="02_01_Cuadros.html"><span class="doc">docs/02_01_Cuadros</span></a></p></td>
 <td><p>2023-11-30 10:00</p></td>
 <td><p>cache</p></td>
 <td><p>0.68</p></td>
 <td><p>✅</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="xref doc reference internal" href="02_03_Figuras.html"><span class="doc">docs/02_03_Figuras</span></a></p></td>
+<tr class="row-even"><td><p><a class="xref doc reference internal" href="02_02_Footnotes.html"><span class="doc">docs/02_02_Footnotes</span></a></p></td>
 <td><p>2023-11-30 10:00</p></td>
 <td><p>cache</p></td>
 <td><p>0.68</p></td>
 <td><p>✅</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="xref doc reference internal" href="02_04_Mas_cosas.html"><span class="doc">docs/02_04_Mas_cosas</span></a></p></td>
+<tr class="row-odd"><td><p><a class="xref doc reference internal" href="02_03_Figuras.html"><span class="doc">docs/02_03_Figuras</span></a></p></td>
 <td><p>2023-11-30 10:00</p></td>
 <td><p>cache</p></td>
 <td><p>0.68</p></td>
 <td><p>✅</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="xref doc reference internal" href="03_00_referenciar_cosas.html"><span class="doc">docs/03_00_referenciar_cosas</span></a></p></td>
+<tr class="row-even"><td><p><a class="xref doc reference internal" href="02_04_Mas_cosas.html"><span class="doc">docs/02_04_Mas_cosas</span></a></p></td>
 <td><p>2023-11-30 10:00</p></td>
 <td><p>cache</p></td>
 <td><p>0.68</p></td>
 <td><p>✅</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="xref doc reference internal" href="04_00_Teoremas_pruebas_y_algoritmos.html"><span class="doc">docs/04_00_Teoremas_pruebas_y_algoritmos</span></a></p></td>
+<tr class="row-odd"><td><p><a class="xref doc reference internal" href="03_00_referenciar_cosas.html"><span class="doc">docs/03_00_referenciar_cosas</span></a></p></td>
+<td><p>2023-11-30 10:00</p></td>
+<td><p>cache</p></td>
+<td><p>0.68</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="xref doc reference internal" href="04_00_Teoremas_pruebas_y_algoritmos.html"><span class="doc">docs/04_00_Teoremas_pruebas_y_algoritmos</span></a></p></td>
 <td><p>2023-11-30 10:00</p></td>
 <td><p>cache</p></td>
 <td><p>0.68</p></td>
@@ -1095,39 +1117,6 @@ A caption for a pandas table.
 </tr>
 </tbody>
 </table>
-</section>
-<section id="ecuaciones">
-<h2><a class="toc-backref" href="#id4"><span class="section-number">1.4. </span>Ecuaciones</a><a class="headerlink" href="#ecuaciones" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-db621eeb-6d58-42bf-8a82-e755f2edf706">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-db621eeb-6d58-42bf-8a82-e755f2edf706" title="Permalink to this equation">#</a></span>\[\begin{equation} 
-    f(x) = x^2 
-\end{equation}\]</div>
-<div class="math notranslate nohighlight" id="equation-my-other-label">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-my-other-label" title="Permalink to this equation">#</a></span>\[
-    w_{t+1} = (1 + r_{t+1}) s(w_t) + y_{t+1}
-\]</div>
-<p>A link to a dollar math block: <a class="reference internal" href="#equation-my-other-label">(1.3)</a></p>
-<div class="math notranslate nohighlight" id="equation-euler">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-euler" title="Permalink to this equation">#</a></span>\[        e^{i\pi} + 1 = 0\]</div>
-<p>Refereciemos la ec. de euler <a class="reference internal" href="#equation-euler">(1.4)</a>.</p>
-<div class="math notranslate nohighlight" id="equation-label-align">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-label-align" title="Permalink to this equation">#</a></span>\[\begin{split}        \begin{align}
-        y    &amp; =  ax^2 + bx + c \\
-        f(x) &amp; =  x^2 + 2xy + y^2 
-        \end{align}\end{split}\]</div>
-<p>Refereciemos la ec. <a class="reference internal" href="#equation-label-align">(1.5)</a>.</p>
-<div class="math notranslate nohighlight" id="equation-label-align-dolar">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-label-align-dolar" title="Permalink to this equation">#</a></span>\[\begin{split}
-    \begin{aligned}
-    y    &amp; =  ax^2 + bx + c \\
-    f(x) &amp; =  x^2 + 2xy + y^2 
-    \end{aligned}
-\end{split}\]</div>
-<p>Refereciemos la ec. <a class="reference internal" href="#equation-label-align-dolar">(1.6)</a>.</p>
-<div class="math notranslate nohighlight" id="equation-label-1">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-label-1" title="Permalink to this equation">#</a></span>\[\begin{split}        (a + b)^2  &amp;=  (a + b)(a + b) \\
-                   &amp;=  a^2 + 2ab + b^2\end{split}\]</div>
-<p>Refereciemos la ec. <a class="reference internal" href="#equation-label-1">(1.7)</a>.</p>
 </section>
 </section>
 
@@ -1162,20 +1151,20 @@ A caption for a pandas table.
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="01_00_Code_Blocks_y_ecuaciones.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Comandos de JupyterBooks</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Code Blocks y ecuaciones</p>
       </div>
     </a>
     <a class="right-next"
-       href="02_00_Roles_and_directives.html"
+       href="01_02_Ecuaciones.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Roles and directives</p>
+        <p class="prev-next-title"><span class="section-number">1.2. </span>Ecuaciones</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1194,29 +1183,28 @@ A caption for a pandas table.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">1.1. Code blocks and outputs</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-no-ejecutables-pero-numeradas-y-con-formato">1.1.1. Celdas no ejecutables pero numeradas y con formato</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-con-salida-de-error">1.1.2. Celdas con salida de error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-desplegables">1.1.3. Celdas desplegables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-con-scroll">1.1.4. Celdas con scroll</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colores-en-los-print">1.1.5. Colores en los print</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-blocks-and-outputs">1.1.1. Code blocks and outputs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-no-ejecutables-pero-numeradas-y-con-formato">1.1.1.1. Celdas no ejecutables pero numeradas y con formato</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-con-salida-de-error">1.1.1.2. Celdas con salida de error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-desplegables">1.1.1.3. Celdas desplegables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#celdas-con-scroll">1.1.1.4. Celdas con scroll</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colores-en-los-print">1.1.1.5. Colores en los print</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-para-insertar-variables-en-el-texto">1.2. glue para insertar variables en el texto</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gluing-variables-en-el-notebook">1.2.1. “Gluing” variables en el notebook</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gluing-numeros-plots-math-y-tablas">1.2.2. “Gluing” numeros, plots. math y tablas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pasting-las-variables">1.2.3. “Pasting” las variables</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-any-sin-formato">1.2.3.1. glue:any (sin formato)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-text">1.2.3.2. glue:text</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-figure">1.2.3.3. glue:figure</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-math">1.2.3.4. glue:math</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-para-insertar-variables-en-el-texto">1.1.2. glue para insertar variables en el texto</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gluing-variables-en-el-notebook">1.1.2.1. “Gluing” variables en el notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gluing-numeros-plots-math-y-tablas">1.1.2.2. “Gluing” numeros, plots. math y tablas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pasting-las-variables">1.1.2.3. “Pasting” las variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-any-sin-formato">1.1.2.3.1. glue:any (sin formato)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-text">1.1.2.3.2. glue:text</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-figure">1.1.2.3.3. glue:figure</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#glue-math">1.1.2.3.4. glue:math</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pasting-en-tablas">1.2.4. “Pasting” en tablas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pasting-en-tablas">1.1.2.4. “Pasting” en tablas</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-de-las-ejecuciones">1.3. Estadisticas de las ejecuciones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones">1.4. Ecuaciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-de-las-ejecuciones">1.1.3. Estadisticas de las ejecuciones</a></li>
 </ul>
   </nav></div>
 
