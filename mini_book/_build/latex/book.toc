@@ -1,0 +1,60 @@
+\selectlanguage *{english}
+\contentsline {chapter}{\numberline {1}Code Blocks y ecuaciones}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Code cells y code Blocks}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Code blocks and outputs}{3}{subsection.1.1.1}%
+\contentsline {subsubsection}{Celdas no ejecutables pero numeradas y con formato}{4}{subsubsection*.6}%
+\contentsline {subsubsection}{Celdas con salida de error}{5}{subsubsection*.7}%
+\contentsline {subsubsection}{Celdas desplegables}{5}{subsubsection*.8}%
+\contentsline {subsubsection}{Celdas con scroll}{6}{subsubsection*.9}%
+\contentsline {subsubsection}{Colores en los print}{7}{subsubsection*.10}%
+\contentsline {subsection}{\numberline {1.1.2}glue para insertar variables en el texto}{7}{subsection.1.1.2}%
+\contentsline {subsubsection}{“Gluing” variables en el notebook}{7}{subsubsection*.11}%
+\contentsline {subsubsection}{“Gluing” numeros, plots. math y tablas}{8}{subsubsection*.12}%
+\contentsline {subsubsection}{“Pasting” las variables}{9}{subsubsection*.13}%
+\contentsline {paragraph}{glue:any (sin formato)}{9}{paragraph*.14}%
+\contentsline {paragraph}{glue:text}{10}{paragraph*.15}%
+\contentsline {paragraph}{glue:figure}{11}{paragraph*.16}%
+\contentsline {paragraph}{glue:math}{12}{paragraph*.17}%
+\contentsline {subsubsection}{“Pasting” en tablas}{12}{subsubsection*.18}%
+\contentsline {subsection}{\numberline {1.1.3}Estadisticas de las ejecuciones}{13}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Ecuaciones}{13}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Roles and directives}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Cuadros (admonitions)}{15}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Cuadros donde se puede cambiar el título}{15}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Cuadros rápidos (no se puede cambiar el título)}{16}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Cuadros (usando ::: :::)}{16}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Cuadros con html}{17}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Footnotes}{17}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Figuras}{18}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Más cosas}{19}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Margin and sidebar}{19}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}hlist}{19}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}rubric}{20}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Centered}{20}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Sectionauthor}{20}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.6}Glossary}{20}{subsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.4.7}Sustitutions}{20}{subsection.2.4.7}%
+\contentsline {subsection}{\numberline {2.4.8}Grids}{21}{subsection.2.4.8}%
+\contentsline {subsection}{\numberline {2.4.9}Dropdowns}{21}{subsection.2.4.9}%
+\contentsline {subsection}{\numberline {2.4.10}Tab content}{21}{subsection.2.4.10}%
+\contentsline {subsection}{\numberline {2.4.11}Table}{22}{subsection.2.4.11}%
+\contentsline {chapter}{\numberline {3}Referenciar cosas}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Editar nombre en numref:}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Referencias bibliográficas}{24}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Teoremas, pruebas, algoritmos …}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Theorems}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Lemmas}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Corollaries}{25}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Proofs}{26}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Definitions}{26}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Examples}{26}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Axioms}{26}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Algoritms}{26}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Conjectures}{27}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Criteria}{27}{section.4.10}%
+\contentsline {section}{\numberline {4.11}Observations}{27}{section.4.11}%
+\contentsline {section}{\numberline {4.12}Properties}{27}{section.4.12}%
+\contentsline {section}{\numberline {4.13}Propositions}{27}{section.4.13}%
+\contentsline {section}{\numberline {4.14}Remarks}{28}{section.4.14}%
+\contentsline {chapter}{Bibliography}{29}{chapter*.24}%
+\contentsline {chapter}{Proof Index}{31}{section*.25}%

@@ -312,6 +312,45 @@ Dataframe:
 > A caption for a pandas table.
 > ```
 
+#### glue:math
+
+```{code-cell} ipython3
+import sympy as sym
+f = sym.Function('f')
+y = sym.Function('y')
+n = sym.symbols(r'\alpha')
+f = y(n)-2*y(n-1/sym.pi)-5*y(n-2)
+glue("sym_eq", sym.rsolve(f,y(n),[1,4]) ,display=False)
+```
+
+>````text
+>```{glue:math} sym_eq
+>:label: eq-sym
+>``
+>```` 
+>
+>```{glue:math} sym_eq
+>:label: eq-sym
+>```
+
+
+### "Pasting" en tablas
+
+>````text
+>| name                            |       plot                    | mean                      | ci                                                |
+>|:-------------------------------:|:-----------------------------:|---------------------------|---------------------------------------------------|
+>| histogram and raw text          | {glue:}`boot_fig`             | {glue:}`boot_mean`          | {glue:}`boot_clo`-{glue:}`boot_chi`                   |
+>| sorted means and formatted text | {glue:}`sorted_means_fig`     | {glue:text}`boot_mean:.3f` | {glue:text}`boot_clo:.3f`-{glue:text}`boot_chi:.3f` |
+>````
+>
+>| name                            |       plot                    | mean                      | ci                                                |
+>|:-------------------------------:|:-----------------------------:|---------------------------|---------------------------------------------------|
+>| histogram and raw text          | {glue:}`boot_fig`             | {glue:}`boot_mean`          | {glue:}`boot_clo`-{glue:}`boot_chi`                   |
+>| sorted means and formatted text | {glue:}`sorted_means_fig`     | {glue:text}`boot_mean:.3f` | {glue:text}`boot_clo:.3f`-{glue:text}`boot_chi:.3f` |
+
+
+
+
 ## Estadisticas de las ejecuciones
 
 ```{nb-exec-table}

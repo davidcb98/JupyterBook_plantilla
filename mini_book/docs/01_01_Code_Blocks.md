@@ -14,8 +14,8 @@ kernelspec:
 > {sub-ref}`today` | {sub-ref}`wordcount-words` words | {sub-ref}`wordcount-minutes` min read
 
 
-(sec_Code_Blocks_y_Ecuaciones)=
-# Code Blocks y Ecuaciones 
+(sec_Code_Blocks)=
+# Code cells y code Blocks
 
 ```{contents}
 :local:
@@ -83,45 +83,6 @@ Prueba de celda que da error
 print(val_a)
 ```
 
-### Celdas desplegables
-
-Veamos una celda desplegable:
-
-```{code-cell} python
-    :class: dropdown
-
-import numpy as np
-import pandas as pd
-
-np.random.seed(24)
-df = pd.DataFrame({'A': np.linspace(1, 10, 10)})
-df = pd.concat([df, pd.DataFrame(np.random.randn(10, 4), columns=list('BCDE'))],
-            axis=1)
-df.iloc[3, 3] = np.nan
-df.iloc[0, 2] = np.nan
-
-def color_negative_red(val):
-    """
-    Takes a scalar and returns a string with
-    the css property `'color: red'` for negative
-    strings, black otherwise.
-    """
-    color = 'red' if val < 0 else 'black'
-    return 'color: %s' % color
-
-def highlight_max(s):
-    '''
-    highlight the maximum in a Series yellow.
-    '''
-    is_max = s == s.max()
-    return ['background-color: yellow' if v else '' for v in is_max]
-
-df.style.\
-    applymap(color_negative_red).\
-    apply(highlight_max).\
-    set_table_attributes('style="font-size: 10px"')
-```
-
 ### Celdas con scroll
 
 Veamos una celca con scroll en la salida
@@ -158,6 +119,96 @@ for fg in range(30, 38):
         )
 ```
 
+## Esconder celdas y salidas
+
+Se hace con una tag:
+```
+:tag: ["hide-input"]
+:tag: ["hide-output"]
+:tag: ["hide-cell"]
+```
+
+```{code-cell} python
+    :tags: ["hide-input"]
+
+import numpy as np
+import matplotlib.pyplot as plt
+plt.ion()
+
+data = np.random.randn(2, 100)
+fig, ax = plt.subplots()
+ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
+```
+
+```{code-cell} python
+    :tags: ["hide-output"]
+
+import numpy as np
+import matplotlib.pyplot as plt
+plt.ion()
+
+data = np.random.randn(2, 100)
+fig, ax = plt.subplots()
+ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
+```
+
+```{code-cell} python
+    :tags: ["hide-cell"]
+
+import numpy as np
+import matplotlib.pyplot as plt
+plt.ion()
+
+data = np.random.randn(2, 100)
+fig, ax = plt.subplots()
+ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
+```
+
+## Eliminar cerdas o salidas
+
+Se hace con una tag:
+```
+:tag: ["remove-input"]
+:tag: ["remove-output"]
+:tag: ["remove-cell"]
+```
+
+
+```{code-cell} python
+    :tags: ["remove-input"]
+
+import numpy as np
+import matplotlib.pyplot as plt
+plt.ion()
+
+data = np.random.randn(2, 100)
+fig, ax = plt.subplots()
+ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
+```
+
+```{code-cell} python
+    :tags: ["remove-output"]
+
+import numpy as np
+import matplotlib.pyplot as plt
+plt.ion()
+
+data = np.random.randn(2, 100)
+fig, ax = plt.subplots()
+ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
+```
+
+```{code-cell} python
+    :tags: ["remove-cell"]
+
+import numpy as np
+import matplotlib.pyplot as plt
+plt.ion()
+
+data = np.random.randn(2, 100)
+fig, ax = plt.subplots()
+ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
+```
 
 ## glue para insertar variables en el texto
 
@@ -312,56 +363,49 @@ Dataframe:
 > A caption for a pandas table.
 > ```
 
+#### glue:math
+
+```{code-cell} ipython3
+import sympy as sym
+f = sym.Function('f')
+y = sym.Function('y')
+n = sym.symbols(r'\alpha')
+f = y(n)-2*y(n-1/sym.pi)-5*y(n-2)
+glue("sym_eq", sym.rsolve(f,y(n),[1,4]) ,display=False)
+```
+
+>````text
+>```{glue:math} sym_eq
+>:label: eq-sym
+>``
+>```` 
+>
+>```{glue:math} sym_eq
+>:label: eq-sym
+>```
+
+
+### "Pasting" en tablas
+
+>````text
+>| name                            |       plot                    | mean                      | ci                                                |
+>|:-------------------------------:|:-----------------------------:|---------------------------|---------------------------------------------------|
+>| histogram and raw text          | {glue:}`boot_fig`             | {glue:}`boot_mean`          | {glue:}`boot_clo`-{glue:}`boot_chi`                   |
+>| sorted means and formatted text | {glue:}`sorted_means_fig`     | {glue:text}`boot_mean:.3f` | {glue:text}`boot_clo:.3f`-{glue:text}`boot_chi:.3f` |
+>````
+>
+>| name                            |       plot                    | mean                      | ci                                                |
+>|:-------------------------------:|:-----------------------------:|---------------------------|---------------------------------------------------|
+>| histogram and raw text          | {glue:}`boot_fig`             | {glue:}`boot_mean`          | {glue:}`boot_clo`-{glue:}`boot_chi`                   |
+>| sorted means and formatted text | {glue:}`sorted_means_fig`     | {glue:text}`boot_mean:.3f` | {glue:text}`boot_clo:.3f`-{glue:text}`boot_chi:.3f` |
+
+
+
+
 ## Estadisticas de las ejecuciones
 
 ```{nb-exec-table}
 ```
-
-## Ecuaciones
-
-\begin{equation} 
-    f(x) = x^2 
-\end{equation} 
-
-$$
-    w_{t+1} = (1 + r_{t+1}) s(w_t) + y_{t+1}
-$$ (my_other_label)
-
-A link to a dollar math block: {eq}`my_other_label`
-
-```{math} 
-    :label: euler
-        e^{i\pi} + 1 = 0
-```
-
-Refereciemos la ec. de euler {eq}`euler`.
-
-```{math}
-    :label: label_align
-        \begin{align}
-        y    & =  ax^2 + bx + c \\
-        f(x) & =  x^2 + 2xy + y^2 
-        \end{align}
-```
-
-Refereciemos la ec. {eq}`label_align`.
-
-$$
-    \begin{aligned}
-    y    & =  ax^2 + bx + c \\
-    f(x) & =  x^2 + 2xy + y^2 
-    \end{aligned}
-$$ (label_align_dolar)
-
-Refereciemos la ec. {eq}`label_align_dolar`.
-
-```{math}
-    :label: label_1
-        (a + b)^2  &=  (a + b)(a + b) \\
-                   &=  a^2 + 2ab + b^2
-```
-Refereciemos la ec. {eq}`label_1`.
-
 
 
 

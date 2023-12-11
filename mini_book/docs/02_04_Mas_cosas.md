@@ -208,7 +208,7 @@ Here's the third card.
 :::
 ::::
 
-## Dropdowns
+## Dropdowns y toggle
 
 ```{dropdown} Here's my dropdown
 And here's my dropdown content
@@ -224,7 +224,12 @@ Here's what's inside!
 The note body will be hidden!
 ```
 
+```{toggle}
+Some hidden toggle content!
+```
+
 ## Tab content
+
 
 ````{tab-set}
 ```{tab-item} Tab 1 title

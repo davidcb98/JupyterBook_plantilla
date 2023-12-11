@@ -17,7 +17,7 @@ kernelspec:
 
 
 
-Referencia a una sección usando el título: {doc}`./01_00_sec_Code_Blocks_y_Ecuaciones`. Se usa el **nombre del fichero**
+Referencia a una sección usando el título: {doc}`./01_00_Code_Blocks_y_ecuaciones`. Se usa el **nombre del fichero**
 
     {doc}`./01_00_sec_Code_Blocks_y_Ecuaciones`
 
