@@ -88,6 +88,7 @@ show(p)
 ```{code-cell} ipython3
 import ipywidgets as widgets
 ```
+
 ```{code-cell} ipython3
 widgets.IntSlider(
     value=7,
@@ -112,3 +113,5 @@ for ii in range(len(children)):
     tab.set_title(ii, f"tab_{ii}")
 tab
 ```
+
+Pueden verse muchos más widgets [aquí](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html)
