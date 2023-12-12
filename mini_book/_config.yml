@@ -45,7 +45,7 @@ repository:
 
 launch_buttons:
   notebook_interface     : "classic"  # or "jupyterlab"
-  #binderhub_url          : "https://mybinder.org"
+  binderhub_url          : "https://mybinder.org"
   thebe                  : true
 
 
