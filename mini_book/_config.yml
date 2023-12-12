@@ -43,7 +43,7 @@ repository:
   path_to_book                : "mini_book"    # Optional path to your book, relative to the repository root
 
 launch_buttons:
-  notebook_interface     : "classic"  # or "jupyterlab"
+  notebook_interface     : "jupyterlab"  # or "classic"
   binderhub_url          : "https://mybinder.org"
   thebe                  : true
 
