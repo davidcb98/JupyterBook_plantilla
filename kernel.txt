@@ -1,7 +1,0 @@
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "davidcb98/kernel_JupyterBook",
-        },
-    }
