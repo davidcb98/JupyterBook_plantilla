@@ -39,7 +39,7 @@ notebook_interface            : "notebook"
 
 # Launch button settings
 repository:
-  url                         : https://github.com/davidcb98/JupyterBook_plantilla
+  url                         : https://github.com/davidcb98/kernel_JupyterBook
   path_to_book                : "mini_book"    # Optional path to your book, relative to the repository root
 
 launch_buttons:
