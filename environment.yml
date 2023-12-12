@@ -1,11 +1,8 @@
-name: mpl-tutorial
+name: ipympl
 channels:
-- anaconda
-- defaults
+  - conda-forge
 dependencies:
-- ipython
-- matplotlib
-- pandas
-- scipy
-- python=3.11
-- pyqt
+  - numpy
+  - jupyterlab=3
+  - matplotlib-base>=2.2.2
+  - ipympl=0.6.1
