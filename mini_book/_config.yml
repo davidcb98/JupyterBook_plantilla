@@ -25,6 +25,7 @@ execute:
   allow_errors: true
   stderr_output: show
 
+
 # HTML-specific settings
 html:
   home_page_in_navbar         : false

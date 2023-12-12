@@ -13,9 +13,13 @@ kernelspec:
 
 > {sub-ref}`today` | {sub-ref}`wordcount-words` words | {sub-ref}`wordcount-minutes` min read
 
+```{thebe-button}
+```
 
 (sec_Code_Blocks)=
 # Code cells y code Blocks
+
+
 
 ```{contents}
 :local:
