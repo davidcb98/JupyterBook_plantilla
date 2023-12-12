@@ -1,4 +1,3 @@
-name: ipympl
 channels:
   - conda-forge
 dependencies:
