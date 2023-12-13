@@ -55,6 +55,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "davidcb98/JupyterBook_plantilla");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
@@ -178,7 +212,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="03_00_referenciar_cosas.html">3. Referenciar cosas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_00_Teoremas_pruebas_y_algoritmos.html">4. Teoremas, pruebas, algoritmos …</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01_01_Code_Blocks_2.html">5. Code Block (prueba borrar)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_Comentarios_Utterance.html">5. Comentarios Utterance</a></li>
 </ul>
 
     </div>
@@ -458,7 +492,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <blockquote>
-<div><p>Dec 12, 2023 | 31 words | 0 min read</p>
+<div><p>Dec 13, 2023 | 31 words | 0 min read</p>
 </div></blockquote>
 <section class="tex2jax_ignore mathjax_ignore" id="figuras">
 <h1><span class="section-number">2.3. </span>Figuras<a class="headerlink" href="#figuras" title="Permalink to this heading">#</a></h1>
